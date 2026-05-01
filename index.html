@@ -1987,13 +1987,7 @@ footer {
 <!-- ════ HERO — Static image ════ -->
 <section id="hero" aria-label="ヒーローセクション">
   <div class="hero-vid" aria-hidden="true">
-    <iframe
-      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=1&muted=1&playsinline=1"
-      style="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;"
-      allow="autoplay; fullscreen; picture-in-picture"
-      tabindex="-1"
-      aria-hidden="true"
-    ></iframe>
+    <div id="hero-vimeo"></div>
   </div>
   <div class="hero-veil" aria-hidden="true"></div>
 </section>
@@ -2893,6 +2887,42 @@ document.querySelectorAll('.fsub').forEach(btn => {
     item.addEventListener('keydown', e => {
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(); }
     });
+  });
+})();
+</script>
+
+<!-- ════ VIMEO SDK — Hero background video ════ -->
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+(function () {
+  var player = new Vimeo.Player('hero-vimeo', {
+    id: 305311222,
+    background: true,
+    autoplay: true,
+    muted: true,
+    loop: true,
+    playsinline: true,
+    controls: false
+  });
+
+  player.ready().then(function () {
+    var iframe = document.querySelector('#hero-vimeo iframe');
+    if (iframe) {
+      iframe.style.cssText = [
+        'position:absolute',
+        'top:50%',
+        'left:50%',
+        'width:177.78vh',
+        'height:56.25vw',
+        'min-width:100%',
+        'min-height:100%',
+        'transform:translate(-50%,-50%)',
+        'border:none',
+        'pointer-events:none'
+      ].join(';');
+    }
+    player.setVolume(0);
+    player.play().catch(function () {});
   });
 })();
 </script>
