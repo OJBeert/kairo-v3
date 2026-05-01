@@ -48,6 +48,9 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://player.vimeo.com">
+<link rel="preconnect" href="https://f.vimeocdn.com" crossorigin>
+<link rel="preconnect" href="https://fresnel.vimeocdn.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400&family=Noto+Sans+TC:wght@200;300;400&family=Noto+Sans+KR:wght@200;300;400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;300;400;500&family=Noto+Serif+JP:wght@200;300&family=Noto+Sans+JP:wght@200;300&display=swap" rel="stylesheet">
 
@@ -469,6 +472,7 @@ img { display: block; max-width: 100%; }
 }
 .hero-vid {
   position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  opacity: 0; transition: opacity 1s ease;
 }
 
 
@@ -2905,6 +2909,8 @@ document.querySelectorAll('.fsub').forEach(btn => {
     controls: false
   });
 
+  var heroVid = document.querySelector('.hero-vid');
+
   player.ready().then(function () {
     var iframe = document.querySelector('#hero-vimeo iframe');
     if (iframe) {
@@ -2923,6 +2929,10 @@ document.querySelectorAll('.fsub').forEach(btn => {
     }
     player.setVolume(0);
     player.play().catch(function () {});
+  });
+
+  player.on('play', function () {
+    if (heroVid) heroVid.style.opacity = '1';
   });
 })();
 </script>
