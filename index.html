@@ -1797,6 +1797,104 @@ footer {
   font-weight: 200; line-height: 1.8; letter-spacing: .07em;
   color: var(--ink); margin-bottom: 2.8rem;
 }
+
+/* ── Video Works Section ── */
+#video-works {
+  padding: 120px 40px;
+  background: var(--cream);
+}
+.video-works__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 64px;
+}
+.video-works__header h2 {
+  font-family: var(--f-d);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--ink);
+  max-width: 580px;
+}
+.video-works__header h2 em {
+  font-style: italic;
+  color: var(--warm);
+}
+.video-works__header > p {
+  font-family: var(--f-u);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-mid);
+  max-width: 300px;
+}
+.video-works__bezel-outer {
+  background: rgba(44,41,37,.06);
+  border: 1px solid rgba(44,41,37,.1);
+  border-radius: 20px;
+  padding: 8px;
+}
+.video-works__bezel-inner {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #1a1410;
+  position: relative;
+  padding-top: 56.25%;
+}
+.video-works__bezel-inner iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+.video-works__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+}
+.video-works__caption > p {
+  font-family: var(--f-u);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--warm);
+  letter-spacing: .1em;
+}
+.video-works__caption > a {
+  font-family: var(--f-u);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity .4s cubic-bezier(.32,.72,0,1);
+}
+.video-works__caption > a:hover { opacity: .5; }
+.arrow-circle {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(44,41,37,.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-style: normal;
+}
+@media (max-width: 768px) {
+  #video-works { padding: 80px 24px; }
+  .video-works__header { flex-direction: column; align-items: flex-start; }
+  .video-works__header > p { max-width: 100%; }
+  .video-works__caption { flex-direction: column; align-items: flex-start; }
+}
 </style>
 </head>
 <body>
@@ -1889,6 +1987,15 @@ footer {
 
 <!-- ════ HERO — Static image ════ -->
 <section id="hero" aria-label="ヒーローセクション">
+  <div class="hero-vid" aria-hidden="true">
+    <iframe
+      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=1&muted=1"
+      style="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;"
+      allow="autoplay"
+      tabindex="-1"
+      aria-hidden="true"
+    ></iframe>
+  </div>
   <div class="hero-veil" aria-hidden="true"></div>
 </section>
 
@@ -2193,6 +2300,7 @@ footer {
         <p class="en">Most of the city's finest establishments couldn't accommodate foreign guests. I kept returning to Ginza — and kept being turned away from places I wanted to experience. As an outsider, I felt it viscerally: extraordinary restaurants were losing extraordinary guests simply because of a language barrier that nobody had thought to design around.</p>
         <p class="en" style="margin-top:1.2rem">Walking these streets every day for thirty years, I arrived at one conviction: the problem is never the food, the location, or the service. The problem is that nobody has built the infrastructure to let the world find you. Most inbound consultants advise from spreadsheets. Albert, KAIRO's founder, walks Ginza and Tsukiji every single day — past every queue, down every alley — because <em>strategies built from real observation are the ones that actually work</em>.</p>
         <p class="en" style="margin-top:1.2rem">My native fluency in both English and Japanese is not mere translation. It is the ability to understand what an affluent traveller from London or Singapore needs to feel confident booking a kaiseki counter in Tsukiji — and to frame your establishment in precisely that language.</p>
+        <p class="en" style="margin-top:1.2rem">What most web designers cannot offer — and what sets KAIRO entirely apart — is fifteen years of professional video direction running in parallel with this ground-level work. Corporate films, brand narratives, inbound-targeted English content, short-form social video: the full range, directed and edited in-house. When a Ginza restaurant needs a hero film for their new website, they do not need to coordinate between a web studio and a separate production company, brief two creative directors, and hope the results feel coherent. KAIRO conceives, shoots, edits, and publishes — in English and Japanese — under one roof. In Tokyo's design market, this is genuinely rare.</p>
         <blockquote style="border-left:2px solid var(--warm);padding-left:1.6rem;margin:1.8rem 0 0;font-family:var(--f-d);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.75" class="en">
           "We don't translate words. We translate culture."<br>
           <span style="font-style:normal;font-size:.75rem;font-family:var(--f-u);letter-spacing:.2em;color:var(--ink-light)">— Albert Junior, Founder, KAIRO</span>
@@ -2205,6 +2313,7 @@ footer {
         <p class="jp-p ja">当時、日本の名店のほとんどは外国語での予約を受け付けていませんでした。私は銀座に通い続けながら、何度も「入れなかった店」を経験しました。多くの名店が、言語の壁のせいだけで外国人客を取りこぼしていることを、外国人の自分だからこそ、肌で感じ続けていました。</p>
         <p class="jp-p ja" style="margin-top:1.2rem">毎日この街を歩くなかで、ひとつの確信を得ました。問題は料理でも立地でもサービスでもない。「存在を知ってもらうための設計」が、まだ誰もやっていないのだと。私が英語と日本語の両方をネイティブとして持っていることは、単なる「翻訳能力」ではありません。海外富裕層が何に信頼を感じ、何に不安を覚えるか——その感覚を、日本の名店の文化的文脈とともに理解できる人間は、ほぼ存在しない。</p>
         <p class="jp-p ja" style="margin-top:1.2rem">だから私は、机の前でデータを見ません。毎日、銀座と築地の路地裏を歩きます。今日の観光客の動きを、自分の目で確かめながら、あなたの店の戦略を考えます。</p>
+        <p class="jp-p ja" style="margin-top:1.2rem">多くのウェブデザイナーが提供できないもの——それが、KAIROをまったく異なる存在にしています。30年の現場経験と並走してきた、15年の映像ディレクションキャリアです。企業プロモーション映像、ブランドナラティブ、インバウンド富裕層向けの英語映像、SNSショート動画。すべてを自社内でディレクション・編集まで完結します。銀座の名店が新しいウェブサイト用のヒーロー映像を必要とするとき、ウェブ制作会社と映像制作会社を別々に動かし、2人のクリエイティブディレクターにブリーフィングし、仕上がりの一貫性を祈る必要はありません。KAIROは企画・撮影・編集・公開を、英語と日本語の両方で、一社として完結させます。東京のデザイン市場において、これは本当に希少なことです。</p>
         <blockquote style="border-left:2px solid var(--warm);padding-left:1.6rem;margin:1.8rem 0 0;font-family:var(--f-d);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.75" class="ja">
           "We don't translate words. We translate culture."<br>
           <span style="font-style:normal;font-size:.75rem;font-family:var(--f-u);letter-spacing:.2em;color:var(--ink-light)">— Albert Junior, Founder, KAIRO</span>
@@ -2213,6 +2322,7 @@ footer {
         <!-- ZH: Founder story -->
         <p class="zh" style="font-style:italic;font-family:var(--f-js);font-size:1rem;color:var(--ink);margin-bottom:1.4rem;line-height:1.7">「1997年，我幾乎不會說日文就來到了東京。」</p>
         <p class="zh" style="font-family:var(--f-js);font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.06em;color:var(--ink-mid)">當時，日本大多數名店無法接待外國客人。我持續走訪銀座，卻一再被拒於門外。身為外國人，我切身感受到：許多名店只因語言障礙，就白白流失了高價值的國際客人。三十年間每天走在這條街上，我得出一個確信——問題不在料理、地點或服務，而在於「讓世界找到你的設計」從未建立。我不在辦公桌前看數據。我每天走在銀座與築地的巷弄裡，用自己的眼睛確認今天的觀光客動向，再為您的店家制定策略。</p>
+        <p class="zh" style="font-family:var(--f-js);font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.06em;color:var(--ink-mid);margin-top:1.2rem">大多數網頁設計師無法提供的——正是讓KAIRO截然不同的關鍵——是與三十年現場工作並行的十五年專業影像導演資歷。企業宣傳片、品牌敘事影片、針對訪日富裕旅客的英語影像內容、短影音社群素材：完整的影像製作範疇，全程在內部導演與剪輯完成。當銀座的名店需要為新網站製作主視覺影片時，無需在網頁公司與影像製作公司之間協調，無需向兩位創意總監分別簡報，也無需期盼最終成果能夠風格一致。KAIRO以中英日三語，在同一屋簷下完成企劃、拍攝、剪輯與發布。在東京的設計市場中，這確實極為罕見。</p>
         <blockquote style="border-left:2px solid var(--warm);padding-left:1.6rem;margin:1.8rem 0 0;font-family:var(--f-d);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.75" class="zh">
           "We don't translate words. We translate culture."<br>
           <span style="font-style:normal;font-size:.75rem;font-family:var(--f-u);letter-spacing:.2em;color:var(--ink-light)">— Albert Junior, Founder, KAIRO</span>
@@ -2221,6 +2331,7 @@ footer {
         <!-- KO: Founder story -->
         <p class="ko" style="font-style:italic;font-size:1rem;color:var(--ink);margin-bottom:1.4rem;line-height:1.7">「1997년, 저는 일본어를 거의 못 하는 상태로 도쿄에 왔습니다.」</p>
         <p class="ko" style="font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.04em;color:var(--ink-mid)">당시 일본의 대부분 명점은 외국어 예약을 받지 못했습니다. 긴자를 계속 다니면서 "들어가지 못한 가게"를 몇 번이나 경험했습니다. 외국인이었기에 몸으로 느꼈습니다—언어의 장벽만으로 고가치 외국 손님을 잃는 명점들을. 삼십 년간 매일 이 거리를 걸으며 하나의 확신을 얻었습니다. 문제는 음식도, 입지도, 서비스도 아닙니다. 세상이 당신을 찾을 수 있는 설계가 아직 없는 것입니다. 저는 책상 앞에서 데이터를 보지 않습니다. 매일 긴자와 쓰키지의 골목을 걸으며 직접 눈으로 확인하고, 당신의 가게 전략을 생각합니다.</p>
+        <p class="ko" style="font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.04em;color:var(--ink-mid);margin-top:1.2rem">대부분의 웹 디자이너가 제공할 수 없는 것——그것이 KAIRO를 완전히 다른 존재로 만드는 요소입니다——바로 30년의 현장 경험과 함께해온 15년의 영상 디렉팅 경력입니다. 기업 홍보 영상, 브랜드 내러티브, 인바운드 부유층을 겨냥한 영어 영상 콘텐츠, 소셜미디어용 숏폼 동영상. 전체 범위를 사내에서 디렉팅과 편집까지 완결합니다. 긴자의 명점이 새 웹사이트를 위한 히어로 영상을 필요로 할 때, 웹 제작사와 영상 제작사를 따로 조율하고, 두 명의 크리에이티브 디렉터에게 브리핑하며, 결과물의 일관성을 바랄 필요가 없습니다. KAIRO는 영어와 일본어로, 한 지붕 아래에서 기획·촬영·편집·발행을 완결합니다. 도쿄 디자인 시장에서, 이것은 진정으로 희소한 일입니다.</p>
         <blockquote style="border-left:2px solid var(--warm);padding-left:1.6rem;margin:1.8rem 0 0;font-family:var(--f-d);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.75" class="ko">
           "We don't translate words. We translate culture."<br>
           <span style="font-style:normal;font-size:.75rem;font-family:var(--f-u);letter-spacing:.2em;color:var(--ink-light)">— Albert Junior, Founder, KAIRO</span>
@@ -2265,199 +2376,6 @@ footer {
         <div class="stat-jp ko">일반적인 투자 회수 기간</div>
       </div>
     </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<!-- ════ CONCEPT WORK ════ -->
-<section id="cases" aria-labelledby="cases-h">
-  <div class="cases-hd rv">
-    <span class="sup en">Concept Work</span>
-    <span class="sup ja">制作例</span>
-    <span class="sup zh">제작 사례</span>
-    <span class="sup ko">作品集</span>
-    <h2 id="cases-h">
-      <span class="en">Built to demonstrate<br>the <em>KAIRO approach.</em></span>
-      <span class="jp-h2 ja">KAIROのアプローチを示す、<br><em>制作例</em>。</span>
-      <span class="en zh">展示 KAIRO 方法的<br><em>示範作品。</em></span>
-      <span class="ko">KAIRO 접근법을 보여주는<br><em>시연 작품입니다.</em></span>
-    </h2>
-    <p class="rv d1 en">The following sites were created as demonstration pieces to illustrate the KAIRO approach. They are not client sites — they are proof of concept, crafted to the same standard we bring to every engagement.</p>
-    <p class="rv d1 jp-p ja">以下は、KAIROのアプローチを示すデモンストレーション制作例です。クライアントサイトではありませんが、実際の案件と同じ水準で制作されています。</p>
-    <p class="rv d1 zh">以下網站為展示 KAIRO 方法的示範作品，並非客戶網站，而是以相同水準打造的概念驗證作品。</p>
-    <p class="rv d1 ko">다음 사이트들은 KAIRO 방법론을 보여주기 위한 시연 작품으로, 고객 사이트가 아니라 동일한 수준으로 제작된 개념 증명물입니다.</p>
-  </div>
-
-  <div class="cases-grid cases-grid-v2">
-
-    <!-- Concept 01 -->
-    <article class="case-card rv d1" aria-labelledby="cw1">
-      <div class="case-card-top-rule" aria-hidden="true"></div>
-      <div class="case-mockup" aria-hidden="true">
-        <div class="mock-chrome">
-          <div class="mock-dots">
-            <span class="mock-dot"></span>
-            <span class="mock-dot"></span>
-            <span class="mock-dot"></span>
-          </div>
-          <div class="mock-url"></div>
-        </div>
-        <div class="mock-screen">
-          <img src="/assets/img/case01-mockup.webp" alt="Concept LP 01 — KAIRO demonstration" loading="lazy">
-        </div>
-      </div>
-      <div class="case-body-wrap">
-        <span class="case-num">Concept 01</span>
-        <span class="case-cat en">Concept LP</span>
-        <span class="case-cat ja">制作例 LP</span>
-        <span class="case-cat zh">概念LP</span>
-        <span class="case-cat ko">컨셉 LP</span>
-        <h3 id="cw1" class="case-type en"><em>Premium Dining</em><br>Inbound LP</h3>
-        <p class="case-jp-type ja">高級飲食店向け<br><em>インバウンドLP</em></p>
-        <div class="case-rule"></div>
-        <div class="case-tags">
-          <span class="case-tag en">Multilingual</span>
-          <span class="case-tag ja">多言語対応</span>
-          <span class="case-tag zh">多語言</span>
-          <span class="case-tag ko">다국어</span>
-          <span class="case-tag en">Booking Flow</span>
-          <span class="case-tag ja">予約導線</span>
-          <span class="case-tag en">MEO Design</span>
-          <span class="case-tag ja">MEO設計</span>
-        </div>
-        <div class="case-outcome">
-          <p class="case-out-desc en">Demonstration piece. Full multilingual LP with Google Reserve integration and MEO-optimised structure.</p>
-          <p class="case-out-jp ja">デモ制作。Google予約連携・MEO最適化構造を含む多言語LP。</p>
-          <p class="case-out-desc zh">示範作品。多語言LP，整合Google Reserve預訂及MEO優化架構。</p>
-          <p class="case-out-jp ko">데모 작품. Google Reserve 연동 및 MEO 최적화 구조를 포함한 다국어 LP.</p>
-        </div>
-      </div>
-    </article>
-
-    <!-- Concept 02 -->
-    <article class="case-card rv d2" aria-labelledby="cw2">
-      <div class="case-card-top-rule" aria-hidden="true"></div>
-      <div class="case-mockup" aria-hidden="true">
-        <div class="mock-chrome">
-          <div class="mock-dots">
-            <span class="mock-dot"></span>
-            <span class="mock-dot"></span>
-            <span class="mock-dot"></span>
-          </div>
-          <div class="mock-url"></div>
-        </div>
-        <div class="mock-screen">
-          <img src="/assets/img/case02-mockup.webp" alt="Concept LP 02 — KAIRO demonstration" loading="lazy">
-        </div>
-      </div>
-      <div class="case-body-wrap">
-        <span class="case-num">Concept 02</span>
-        <span class="case-cat en">Concept LP</span>
-        <span class="case-cat ja">制作例 LP</span>
-        <span class="case-cat zh">概念LP</span>
-        <span class="case-cat ko">컨셉 LP</span>
-        <h3 id="cw2" class="case-type en"><em>Craft &amp; Culture</em><br>Brand LP</h3>
-        <p class="case-jp-type ja">ブランド・文化発信向け<br><em>LP</em></p>
-        <div class="case-rule"></div>
-        <div class="case-tags">
-          <span class="case-tag en">Native Copywriting</span>
-          <span class="case-tag ja">英語ネイティブコピー</span>
-          <span class="case-tag zh">原生文案</span>
-          <span class="case-tag ko">원어민 카피라이팅</span>
-          <span class="case-tag en">Instagram</span>
-          <span class="case-tag ja">Instagram連携</span>
-        </div>
-        <div class="case-outcome">
-          <p class="case-out-desc en">Demonstration piece. Native English brand narrative with Instagram feed integration.</p>
-          <p class="case-out-jp ja">デモ制作。英語ネイティブブランドナラティブ + Instagramフィード連携。</p>
-          <p class="case-out-desc zh">示範作品。以英語原生品牌故事為核心，整合Instagram動態展示。</p>
-          <p class="case-out-jp ko">데모 작품. 원어민 영어 브랜드 내러티브 + Instagram 피드 연동.</p>
-        </div>
-      </div>
-    </article>
-
-    <!-- Concept 03 -->
-    <article class="case-card rv d3" aria-labelledby="cw3">
-      <div class="case-card-top-rule" aria-hidden="true"></div>
-      <div class="case-mockup" aria-hidden="true">
-        <div class="mock-chrome">
-          <div class="mock-dots">
-            <span class="mock-dot"></span>
-            <span class="mock-dot"></span>
-            <span class="mock-dot"></span>
-          </div>
-          <div class="mock-url"></div>
-        </div>
-        <div class="mock-screen">
-          <img src="/assets/img/case03-mockup.webp" alt="Concept LP 03 — KAIRO demonstration" loading="lazy">
-        </div>
-      </div>
-      <div class="case-body-wrap">
-        <span class="case-num">Concept 03</span>
-        <span class="case-cat en">作品集</span>
-        <span class="case-cat ja">ポートフォリオ</span>
-        <span class="case-cat zh">作品集</span>
-        <span class="case-cat ko">포트폴리오</span>
-        <h3 id="cw3" class="case-type en"><em>Artisan Profile</em><br>作品集 Site</h3>
-        <p class="case-jp-type ja">職人・アーティスト向け<br><em>ポートフォリオ</em></p>
-        <div class="case-rule"></div>
-        <div class="case-tags">
-          <span class="case-tag en">作品集</span>
-          <span class="case-tag ja">ポートフォリオ</span>
-          <span class="case-tag en">X / Instagram</span>
-          <span class="case-tag ja">X / Instagram連携</span>
-          <span class="case-tag zh">社群媒體</span>
-          <span class="case-tag ko">소셜 미디어</span>
-        </div>
-        <div class="case-outcome">
-          <p class="case-out-desc en">Demonstration piece. Artisan portfolio with social media integration and bilingual presentation.</p>
-          <p class="case-out-jp ja">デモ制作。ソーシャルメディア連携・日英バイリンガル構成の職人ポートフォリオ。</p>
-          <p class="case-out-desc zh">示範作品。職人作品集，整合社群媒體及日英雙語呈現。</p>
-          <p class="case-out-jp ko">데모 작품. SNS 연동 및 이중 언어 구성의 장인 포트폴리오.</p>
-        </div>
-      </div>
-    </article>
-
-    <!-- Concept 04 — CTA card -->
-    <article class="case-card case-card-cta rv d3" style="grid-column:1/-1" aria-labelledby="cw4">
-      <div class="case-card-top-rule" aria-hidden="true"></div>
-      <div class="case-body-wrap" style="padding:3.5rem 3rem;min-height:auto;flex-direction:row;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
-        <div>
-          <span class="case-num">Concept 04</span>
-          <span class="case-cat en">Your Establishment</span>
-          <span class="case-cat ja">あなたの店</span>
-          <span class="case-cat zh">您的店鋪</span>
-          <span class="case-cat ko">귀하의 매장</span>
-          <h3 id="cw4" class="case-type en" style="margin-bottom:.5rem"><em>[Your name here]</em></h3>
-          <p class="case-jp-type ja" style="margin-bottom:0"><em>あなたの店名</em></p>
-          <p class="case-jp-type zh" style="margin-bottom:0"><em>[您的店名]</em></p>
-          <p class="case-jp-type ko" style="margin-bottom:0"><em>[귀하의 상호명]</em></p>
-        </div>
-        <div style="text-align:right">
-          <p class="case-body en" style="margin-bottom:1.2rem">Enquire to see your establishment featured here.</p>
-          <p class="case-jp-body ja" style="margin-bottom:1.2rem">あなたの店が、ここに載ります。</p>
-          <p class="case-body zh" style="margin-bottom:1.2rem">歡迎聯繫，讓您的店家出現在這裡。</p>
-          <p class="case-jp-body ko" style="margin-bottom:1.2rem">문의하시면 귀하의 가게가 여기에 실립니다.</p>
-          <a href="#enquire" class="tcta">
-            <span class="en">Request a free consultation</span>
-            <span class="ja">無料相談を申し込む →</span>
-            <span class="zh">申請免費諮詢</span>
-            <span class="ko">무료 상담 신청</span>
-            <svg width="22" height="8" viewBox="0 0 22 8" fill="none" aria-hidden="true"><path d="M0 4h20M16 1l5 3-5 3" stroke="currentColor" stroke-width=".85"/></svg>
-          </a>
-        </div>
-      </div>
-    </article>
-
-  </div>
-
-  <div class="cases-note rv">
-    <span class="cases-note-mark">—</span>
-    <p class="cases-note-txt en">The above are demonstration pieces created by KAIRO to illustrate our design and strategic approach. They are not client sites. We believe in transparency — quality and honesty over fabricated case studies.</p>
-    <p class="cases-note-jp ja">上記はKAIROが自社制作したデモンストレーション作品です。クライアントサイトではありません。「実績詐称」よりも「正直さとクオリティ」を選びます。</p>
-    <p class="cases-note-txt zh">以上均為KAIRO自製的示範作品，非客戶實際網站。我們選擇誠實與品質，而非虛構的成功案例。</p>
-    <p class="cases-note-jp ko">위 내용은 KAIRO가 직접 제작한 데모 작품입니다. 실제 고객 사이트가 아닙니다. 우리는 과장된 실적보다 정직함과 품질을 선택합니다.</p>
   </div>
 </section>
 
@@ -2577,6 +2495,37 @@ footer {
       </div>
     </article>
 
+    <!-- Row 4: Web + Video -->
+    <article class="plan-row rv d4" aria-labelledby="p-vid">
+      <div class="plan-row-label">
+        <span class="plan-row-name en" id="p-vid">Web + Video</span>
+        <span class="plan-row-name ja">映像込みプラン</span>
+        <span class="plan-row-name zh">網站 + 影像方案</span>
+        <span class="plan-row-name ko">웹 + 영상 플랜</span>
+        <div class="plan-row-price">¥800,000<span style="font-size:1rem;font-weight:300">〜</span></div>
+        <div class="plan-row-per en">One-time · excl. tax</div>
+        <div class="plan-row-per ja">一括・税別</div>
+        <div class="plan-row-per zh">一次性・不含稅</div>
+        <div class="plan-row-per ko">일시불·세금 별도</div>
+      </div>
+      <div class="plan-row-body">
+        <ul class="plan-list">
+          <li><span class="en">All Premium inclusions</span><span class="ja jp-li">Premiumの全内容</span><span class="zh">Premium 的全部內容</span><span class="ko">Premium의 모든 내용</span></li>
+          <li><span class="en">Hero film — directed, shot &amp; edited by KAIRO</span><span class="ja jp-li">ヒーロー映像制作（企画・撮影・編集すべてKAIRO）</span><span class="zh">主視覺影片製作（企劃・拍攝・剪輯全由KAIRO完成）</span><span class="ko">히어로 영상 제작（기획·촬영·편집 모두 KAIRO）</span></li>
+          <li><span class="en">English &amp; Japanese narration / voice direction</span><span class="ja jp-li">英語・日本語ナレーション / ボイスディレクション</span><span class="zh">英語・日文旁白 / 聲音導演</span><span class="ko">영어·일본어 내레이션 / 보이스 디렉션</span></li>
+          <li><span class="en">3 × short-form social video edits</span><span class="ja jp-li">SNSショート動画 3本編集</span><span class="zh">SNS 短影音剪輯 3 支</span><span class="ko">SNS 숏폼 동영상 편집 3개</span></li>
+          <li><span class="en">Inbound-targeted English video content</span><span class="ja jp-li">インバウンド向け英語映像コンテンツ</span><span class="zh">針對訪日旅客的英語影像內容</span><span class="ko">인바운드 대상 영어 영상 콘텐츠</span></li>
+          <li><span class="en">Web + video creative direction under one roof</span><span class="ja jp-li">ウェブ・映像を一社で完結するクリエイティブ設計</span><span class="zh">網站與影像在同一屋簷下完成創意統籌</span><span class="ko">웹과 영상을 한 지붕 아래 완결하는 크리에이티브 설계</span></li>
+        </ul>
+      </div>
+      <div class="plan-row-cta">
+        <a href="#enquire" class="tcta">
+          <span class="en">Enquire</span><span class="ja">相談する</span>
+          <svg width="22" height="8" viewBox="0 0 22 8" fill="none" aria-hidden="true"><path d="M0 4h20M16 1l5 3-5 3" stroke="currentColor" stroke-width=".85"/></svg>
+        </a>
+      </div>
+    </article>
+
   </div>
   <div class="roi rv">
     <span class="roi-d">—</span>
@@ -2584,6 +2533,39 @@ footer {
     <p class="roi-j ja">富裕層インバウンドの客単価が<strong>¥30,000</strong>の場合、月<strong>10組</strong>の増加でStandardプランの投資は<strong>1ヶ月で回収</strong>。2ヶ月目以降はすべてが純利益です。</p>
     <p class="roi-j zh">富裕旅客平均消費<strong>¥30,000</strong>，每月新增<strong>10組</strong>客人，Standard 方案即可在<strong>第1個月內回收</strong>。第2個月起皆為純利潤。</p>
     <p class="roi-j ko">부유층 객단가 <strong>¥30,000</strong> 기준, 월 <strong>10팀</strong> 증가로 Standard 플랜 투자는 <strong>1개월 만에 회수</strong>. 2개월째부터는 전부 순이익입니다.</p>
+  </div>
+</section>
+
+
+<hr class="hr">
+
+<!-- ════ VIDEO WORKS ════ -->
+<section id="video-works">
+  <span class="sup rv">Video Direction</span>
+
+  <div class="video-works__header">
+    <h2>映像が、ウェブサイトに<br><em>魂を吹き込む。</em></h2>
+    <p>ウェブデザインと映像制作を一社で完結。<br>
+    インバウンド対応の英語映像も対応可能です。</p>
+  </div>
+
+  <div class="video-works__bezel-outer">
+    <div class="video-works__bezel-inner">
+      <iframe
+        src="https://vimeo.com/showcase/9268447/embed"
+        allowfullscreen
+        frameborder="0"
+        title="KAIRO — Video Direction Works"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="video-works__caption">
+    <p>企業プロモーション映像 / インバウンド対応英語映像 / SNS向けショート動画</p>
+    <a href="#enquire">
+      映像込みプランについて相談する
+      <span class="arrow-circle">↗</span>
+    </a>
   </div>
 </section>
 
@@ -2636,6 +2618,7 @@ footer {
             <option value="standard">Standard — ¥300,000</option>
             <option value="premium">Premium — ¥500,000</option>
             <option value="monthly">Monthly Support — ¥50,000/月</option>
+            <option value="video">Web + Video 映像込みプラン — ¥800,000〜</option>
             <option value="consult">まず相談したい / Initial consultation only</option>
           </select>
         </div>
