@@ -465,8 +465,7 @@ img { display: block; max-width: 100%; }
   aspect-ratio: 16 / 9;
   min-height: 260px;
   overflow: hidden;
-  /* Hero poster image */
-  background: url("/assets/img/service-top.webp") center center / cover no-repeat;
+  background: #14110e;
 }
 .hero-vid {
   position: absolute; inset: 0; pointer-events: none; overflow: hidden;
@@ -1989,9 +1988,9 @@ footer {
 <section id="hero" aria-label="ヒーローセクション">
   <div class="hero-vid" aria-hidden="true">
     <iframe
-      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=1&muted=1"
+      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=1&muted=1&playsinline=1"
       style="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;"
-      allow="autoplay"
+      allow="autoplay; fullscreen; picture-in-picture"
       tabindex="-1"
       aria-hidden="true"
     ></iframe>
