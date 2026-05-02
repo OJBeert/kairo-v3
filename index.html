@@ -2957,26 +2957,27 @@ document.querySelectorAll('.fsub').forEach(btn => {
   var cover = document.querySelector('.hero-cover');
   var player = new Vimeo.Player(document.getElementById('hero-iframe'));
   var transitioning = false;
+  var triggered = false;
 
   player.on('play', function() {
-    if (transitioning) return;
-    cover.style.transition = 'opacity 0s';
-    cover.style.opacity = '0';
+    if (!transitioning) {
+      cover.style.opacity = '0';
+    } else {
+      transitioning = false;
+      triggered = false;
+      cover.style.opacity = '0';
+    }
   });
 
-  player.on('ended', function() {
-    transitioning = true;
-    cover.style.transition = 'none';
-    cover.style.opacity = '1';
-    current = (current + 1) % ids.length;
-    player.loadVideo(ids[current]);
-  });
-
-  player.on('timeupdate', function() {
-    if (!transitioning) return;
-    transitioning = false;
-    cover.style.transition = 'opacity 0s';
-    cover.style.opacity = '0';
+  player.on('timeupdate', function(data) {
+    if (triggered || transitioning) return;
+    if (data.duration > 0 && (data.duration - data.seconds) <= 2) {
+      triggered = true;
+      transitioning = true;
+      cover.style.opacity = '1';
+      current = (current + 1) % ids.length;
+      player.loadVideo(ids[current]);
+    }
   });
 })();
 </script>
