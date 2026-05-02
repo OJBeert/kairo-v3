@@ -474,6 +474,13 @@ img { display: block; max-width: 100%; }
   position: absolute; inset: 0; pointer-events: none; overflow: hidden;
   background: #14110e;
 }
+#hero-player { position: absolute; inset: 0; }
+#hero-player iframe {
+  position: absolute; top: 50%; left: 50%;
+  width: 177.78vh; height: 56.25vw;
+  min-width: 100%; min-height: 100%;
+  transform: translate(-50%,-50%); border: none;
+}
 
 
 
@@ -2039,14 +2046,7 @@ footer {
 <!-- ════ HERO — Static image ════ -->
 <section id="hero" aria-label="ヒーローセクション">
   <div class="hero-vid" aria-hidden="true">
-    <iframe
-      id="hero-iframe"
-      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=0&muted=1&playsinline=1&autopause=0"
-      style="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;"
-      allow="autoplay; fullscreen"
-      tabindex="-1"
-      aria-hidden="true"
-    ></iframe>
+    <div id="hero-player"></div>
   </div>
   <div class="hero-cover" aria-hidden="true"></div>
   <div class="hero-veil" aria-hidden="true"></div>
@@ -3073,7 +3073,14 @@ document.querySelectorAll('.fsub').forEach(btn => {
   var ids = [305311222, 305313129, 377450847, 396397429, 486222916, 657690215];
   var current = 0;
   var cover = document.querySelector('.hero-cover');
-  var player = new Vimeo.Player(document.getElementById('hero-iframe'));
+  var player = new Vimeo.Player('hero-player', {
+    id: ids[0],
+    background: true,
+    muted: true,
+    playsinline: true,
+    autopause: false,
+    loop: false
+  });
   var transitioning = false;
 
   player.on('play', function() {
