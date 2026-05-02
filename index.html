@@ -281,7 +281,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html { font-size: 17px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body { background: var(--cream); color: var(--ink); font-family: var(--f-u); font-weight: 300; line-height: 1.8; overflow-x: hidden; }
 #main-content { padding-top: 62px; }
 img { display: block; max-width: 100%; }
@@ -330,7 +330,7 @@ img { display: block; max-width: 100%; }
 #nav .bars.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 .menu-label {
-  font-family: var(--f-u); font-size: 10px; font-weight: 300;
+  font-family: var(--f-u); font-size: 12px; font-weight: 300;
   letter-spacing: .28em; text-transform: uppercase;
   color: var(--ink-mid);
 }
@@ -338,8 +338,8 @@ img { display: block; max-width: 100%; }
 /* Wordmark — centred */
 .nav-word {
   position: absolute; left: 50%; transform: translateX(-50%);
-  font-family: var(--f-u); font-size: 16px; font-weight: 200;
-  letter-spacing: .65em; text-transform: uppercase;
+  font-family: var(--f-u); font-size: 22px; font-weight: 300;
+  letter-spacing: .55em; text-transform: uppercase;
   color: var(--ink); text-decoration: none;
   white-space: nowrap;
 }
@@ -391,7 +391,7 @@ img { display: block; max-width: 100%; }
 .lang-dropdown .lbtn.on { color: var(--ink); }
 
 .nav-enq {
-  font-family: var(--f-u); font-size: 10px; font-weight: 300;
+  font-family: var(--f-u); font-size: 12px; font-weight: 300;
   letter-spacing: .22em; text-transform: uppercase;
   color: var(--ink); text-decoration: none; transition: opacity var(--t1);
 }
@@ -431,7 +431,7 @@ img { display: block; max-width: 100%; }
 .ov-links { display: flex; flex-direction: column; margin-top: 1.5rem; }
 .ov-links a {
   font-family: var(--f-d);
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
   font-weight: 300; letter-spacing: -.01em;
   color: var(--stone); text-decoration: none;
   padding: .65rem 0;
@@ -553,13 +553,13 @@ img { display: block; max-width: 100%; }
 
 .hr { border: none; height: 1px; background: var(--stone-lt); margin: 0; }
 
-/* Body copy — slightly bigger than before (13→14) */
+/* Body copy */
 .body-en {
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   line-height: 2; letter-spacing: .02em; color: var(--ink-mid); margin-bottom: 2.6rem;
 }
 .body-jp {
-  font-family: var(--f-ju); font-size: 14px; font-weight: 200;
+  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
   line-height: 2.2; letter-spacing: .055em; color: var(--ink-mid); margin-bottom: 2.6rem;
 }
 
@@ -632,14 +632,14 @@ img { display: block; max-width: 100%; }
 }
 .feat li {
   display: flex; align-items: baseline; gap: 1rem;
-  font-family: var(--f-u); font-size: 12.5px; font-weight: 300;
+  font-family: var(--f-u); font-size: 14px; font-weight: 300;
   letter-spacing: .03em; color: var(--ink-mid); line-height: 1.65;
 }
 .feat li::before {
   content: ''; width: 16px; height: 1px;
   background: var(--stone); flex-shrink: 0; margin-top: .55em;
 }
-.feat .jp-li { font-family: var(--f-ju); font-size: 12.5px; font-weight: 200; letter-spacing: .06em; }
+.feat .jp-li { font-family: var(--f-ju); font-size: 14px; font-weight: 200; letter-spacing: .06em; }
 
 /* Photo panel — CSS background */
 .sp-photo {
@@ -686,11 +686,11 @@ img { display: block; max-width: 100%; }
 .why-desc { display: flex; flex-direction: column; justify-content: center; }
 .why-desc .sup { text-align: left; margin-bottom: 1.8rem; }
 .why-desc p {
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   line-height: 2; letter-spacing: .02em; color: var(--ink-mid); margin-bottom: 1.4rem;
 }
 .why-desc .jp-p {
-  font-family: var(--f-ju); font-size: 14px; font-weight: 200;
+  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
   line-height: 2.2; letter-spacing: .06em; color: var(--ink-mid); margin-bottom: 1.4rem;
 }
 .why-desc p strong, .why-desc .jp-p strong { color: var(--ink); font-weight: 400; }
@@ -746,11 +746,11 @@ img { display: block; max-width: 100%; }
   color: var(--ink); margin-bottom: 1.4rem;
 }
 .price-hd p {
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   line-height: 2; letter-spacing: .02em; color: var(--ink-mid);
 }
 .price-hd .jp-p {
-  font-family: var(--f-ju); font-size: 14px; font-weight: 200;
+  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
   line-height: 2.2; letter-spacing: .06em; color: var(--ink-mid);
 }
 
@@ -790,7 +790,7 @@ img { display: block; max-width: 100%; }
   list-style: none; display: flex; flex-direction: column; gap: 1.1rem; margin-bottom: 3.5rem;
 }
 .plan-list li {
-  font-family: var(--f-u); font-size: 12.5px; font-weight: 300;
+  font-family: var(--f-u); font-size: 14px; font-weight: 300;
   letter-spacing: .03em; color: var(--ink-mid); line-height: 1.65;
   display: flex; gap: .9rem; align-items: baseline;
 }
@@ -798,7 +798,7 @@ img { display: block; max-width: 100%; }
   content: ''; width: 14px; height: 1px;
   background: var(--stone); flex-shrink: 0; margin-top: .6em;
 }
-.plan-list .jp-li { font-family: var(--f-ju); font-size: 12.5px; font-weight: 200; letter-spacing: .06em; }
+.plan-list .jp-li { font-family: var(--f-ju); font-size: 14px; font-weight: 200; letter-spacing: .06em; }
 
 .roi {
   max-width: 1200px; margin: 0 auto;
@@ -809,11 +809,11 @@ img { display: block; max-width: 100%; }
 }
 .roi-d { color: var(--warm); font-size: .9rem; flex-shrink: 0; }
 .roi-t {
-  font-family: var(--f-u); font-size: 12.5px; font-weight: 300;
+  font-family: var(--f-u); font-size: 14px; font-weight: 300;
   line-height: 1.85; letter-spacing: .025em; color: var(--ink-mid);
 }
 .roi-j {
-  font-family: var(--f-ju); font-size: 12.5px; font-weight: 200;
+  font-family: var(--f-ju); font-size: 14px; font-weight: 200;
   line-height: 2; letter-spacing: .06em; color: var(--ink-mid);
 }
 .roi-t strong, .roi-j strong { color: var(--ink); font-weight: 400; }
@@ -844,11 +844,11 @@ img { display: block; max-width: 100%; }
   color: var(--ink); margin-bottom: 1.4rem;
 }
 .enq-p {
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   line-height: 2; letter-spacing: .025em; color: var(--ink-mid); margin-bottom: 3rem;
 }
 .enq-jp-p {
-  font-family: var(--f-ju); font-size: 14px; font-weight: 200;
+  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
   line-height: 2.2; letter-spacing: .06em; color: var(--ink-mid); margin-bottom: 3rem;
 }
 
@@ -873,13 +873,13 @@ img { display: block; max-width: 100%; }
 }
 .fi {
   background: transparent; border: none; outline: none;
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   letter-spacing: .025em; color: var(--ink); caret-color: var(--warm); width: 100%; padding: 0;
 }
 .fi::placeholder { color: var(--stone); }
 .fsel {
   background: transparent; border: none; outline: none;
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   letter-spacing: .025em; color: var(--ink-mid); width: 100%; appearance: none; cursor: pointer;
 }
 .fsel option { background: var(--cream); color: var(--ink); }
@@ -938,38 +938,38 @@ footer {
   padding-bottom: 4rem; margin-bottom: 3rem; border-bottom: 1px solid var(--stone-lt);
 }
 .ft-brand {
-  font-family: var(--f-u); font-size: 12px; font-weight: 200;
+  font-family: var(--f-u); font-size: 15px; font-weight: 200;
   letter-spacing: .65em; text-transform: uppercase; color: var(--ink);
 }
 .ft-tag {
-  font-family: var(--f-d); font-style: italic; font-size: 13px;
+  font-family: var(--f-d); font-style: italic; font-size: 15px;
   color: var(--ink-light); margin-top: .5rem; line-height: 1.65;
 }
 .ft-cols { display: flex; gap: 5rem; flex-wrap: wrap; }
 .ft-ct {
-  font-family: var(--f-u); font-size: 9px; font-weight: 300;
+  font-family: var(--f-u); font-size: 11px; font-weight: 300;
   letter-spacing: .3em; text-transform: uppercase; color: var(--ink-ghost);
   display: block; margin-bottom: 1.5rem;
 }
 .ft-ls { list-style: none; display: flex; flex-direction: column; gap: .75rem; }
 .ft-ls a {
-  font-family: var(--f-u); font-size: 12.5px; font-weight: 300;
+  font-family: var(--f-u); font-size: 15px; font-weight: 300;
   letter-spacing: .04em; color: var(--ink-light); text-decoration: none; transition: color var(--t1);
 }
 .ft-ls a:hover { color: var(--ink); }
-.ft-ls .jp-a { font-family: var(--f-ju); font-size: 12px; font-weight: 200; letter-spacing: .06em; }
+.ft-ls .jp-a { font-family: var(--f-ju); font-size: 14px; font-weight: 200; letter-spacing: .06em; }
 
 .ft-bot {
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.2rem;
 }
 .ft-copy {
-  font-family: var(--f-u); font-size: 9.5px; font-weight: 300;
+  font-family: var(--f-u); font-size: 12px; font-weight: 300;
   letter-spacing: .18em; text-transform: uppercase; color: var(--ink-ghost);
 }
 .ft-lang { display: flex; gap: 1rem; }
 .ft-lang button {
   background: none; border: none; cursor: pointer; padding: 0;
-  font-family: var(--f-u); font-size: 9.5px; font-weight: 300;
+  font-family: var(--f-u); font-size: 12px; font-weight: 300;
   letter-spacing: .22em; text-transform: uppercase; color: var(--ink-ghost); transition: color var(--t1);
 }
 .ft-lang button.on { color: var(--ink-mid); }
@@ -994,7 +994,7 @@ footer {
 }
 @media (max-width: 600px) {
   #nav { padding: 0 1.2rem; height: 52px; }
-  .nav-word { font-size: 13px; letter-spacing: .5em; }
+  .nav-word { font-size: 17px; letter-spacing: .5em; }
   .menu-label { display: none; }
   .nav-right { gap: 1rem; }
   .nav-enq { letter-spacing: .14em; font-size: 9px; }
@@ -1049,11 +1049,11 @@ footer {
   color: var(--ink); margin-bottom: 1.4rem;
 }
 .cases-hd p {
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   line-height: 2; letter-spacing: .02em; color: var(--ink-mid);
 }
 .cases-hd .jp-p {
-  font-family: var(--f-ju); font-size: 14px; font-weight: 200;
+  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
   line-height: 2.2; letter-spacing: .06em; color: var(--ink-mid);
 }
 .cases-grid {
@@ -1184,11 +1184,11 @@ footer {
   color: var(--ink); margin-bottom: 1.4rem;
 }
 .cases-hd p {
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   line-height: 2; letter-spacing: .02em; color: var(--ink-mid);
 }
 .cases-hd .jp-p {
-  font-family: var(--f-ju); font-size: 14px; font-weight: 200;
+  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
   line-height: 2.2; letter-spacing: .06em; color: var(--ink-mid);
 }
 
@@ -1421,11 +1421,11 @@ footer {
   color: var(--ink); margin-bottom: 1.4rem;
 }
 .cases-hd p {
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   line-height: 2; letter-spacing: .02em; color: var(--ink-mid);
 }
 .cases-hd .jp-p {
-  font-family: var(--f-ju); font-size: 14px; font-weight: 200;
+  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
   line-height: 2.2; letter-spacing: .06em; color: var(--ink-mid);
 }
 
@@ -1715,12 +1715,12 @@ footer {
   color: var(--ink); margin-bottom: 1rem;
 }
 .symp-sub {
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   line-height: 1.8; letter-spacing: .025em;
   color: var(--ink-mid); margin-bottom: 3.5rem;
 }
 .symp-jp-sub {
-  font-family: var(--f-ju); font-size: 14px; font-weight: 200;
+  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
   line-height: 2; letter-spacing: .06em;
   color: var(--ink-mid); margin-bottom: 3.5rem;
 }
@@ -1765,13 +1765,13 @@ footer {
 }
 .symp-item.checked .symp-cb::after { display: block; }
 .symp-text {
-  font-family: var(--f-u); font-size: 14px; font-weight: 300;
+  font-family: var(--f-u); font-size: 16px; font-weight: 300;
   letter-spacing: .02em; color: var(--ink-mid); line-height: 1.6;
   transition: color var(--t1);
 }
 .symp-item.checked .symp-text { color: var(--ink); }
 .symp-jp-text {
-  font-family: var(--f-ju); font-size: 14px; font-weight: 200;
+  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
   letter-spacing: .06em; color: var(--ink-mid); line-height: 1.7;
   transition: color var(--t1);
 }
@@ -1803,24 +1803,22 @@ footer {
 
 /* ── Video Works Section ── */
 #video-works {
-  padding: 120px 40px;
+  padding: 120px 0;
   background: var(--cream);
 }
 .video-works__header {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-bottom: 64px;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+  padding: 0 6.5vw;
 }
 .video-works__header h2 {
   font-family: var(--f-d);
-  font-size: clamp(36px, 5vw, 56px);
+  font-size: clamp(20px, 2.2vw, 32px);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1.25;
   color: var(--ink);
-  max-width: 580px;
 }
 .video-works__header h2 em {
   font-style: italic;
@@ -1828,13 +1826,13 @@ footer {
 }
 .video-works__header > p {
   font-family: var(--f-u);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
   line-height: 1.8;
   color: var(--ink-mid);
-  max-width: 300px;
 }
 .video-works__bezel-outer {
+  margin: 0 6.5vw;
   background: rgba(44,41,37,.06);
   border: 1px solid rgba(44,41,37,.1);
   border-radius: 20px;
@@ -1860,6 +1858,7 @@ footer {
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 40px;
+  padding: 0 6.5vw;
 }
 .video-works__caption > p {
   font-family: var(--f-u);
@@ -1893,19 +1892,17 @@ footer {
   font-style: normal;
 }
 @media (max-width: 768px) {
-  #video-works { padding: 80px 24px; }
-  .video-works__header { flex-direction: column; align-items: flex-start; }
-  .video-works__header > p { max-width: 100%; }
+  #video-works { padding: 60px 0; }
+  .video-works__header { padding: 0 20px; margin-bottom: 28px; }
   .video-works__bezel-outer {
-    margin-left: -24px;
-    margin-right: -24px;
+    margin: 0;
     border-radius: 0;
     border-left: none;
     border-right: none;
     padding: 4px 0;
   }
   .video-works__bezel-inner { border-radius: 0; }
-  .video-works__caption { flex-direction: column; align-items: flex-start; }
+  .video-works__caption { flex-direction: column; align-items: flex-start; padding: 0 20px; }
 }
 </style>
 </head>
@@ -1936,17 +1933,18 @@ footer {
     <a href="#revenue">
       <span class="en">Revenue</span><span class="ja">売上の設計</span><span class="zh">營收設計</span><span class="ko">매출 설계</span>
       <span class="ov-num">04</span>
-    </a><a href="#cases">
-      <span class="en">Concept Work</span><span class="ja">制作例</span><span class="zh">作品集</span><span class="ko">작품 모음</span>
-      <span class="ov-num">06</span>
+    </a>
+    <a href="#why">
+      <span class="en">Why KAIRO</span><span class="ja">KAIROとは</span><span class="zh">為何選擇 KAIRO</span><span class="ko">KAIRO 소개</span>
+      <span class="ov-num">05</span>
     </a>
     <a href="#pricing">
       <span class="en">Investment</span><span class="ja">料金プラン</span><span class="zh">收費方案</span><span class="ko">요금 안내</span>
-      <span class="ov-num">07</span>
+      <span class="ov-num">06</span>
     </a>
     <a href="#enquire">
       <span class="en">Enquire</span><span class="ja">無料相談</span><span class="zh">聯絡我們</span><span class="ko">문의</span>
-      <span class="ov-num">08</span>
+      <span class="ov-num">07</span>
     </a>
   </nav>
   <div class="ov-foot">
@@ -2062,7 +2060,7 @@ footer {
       <span class="intro-h1 ko">오늘도 외국인 손님이 문 앞을 <em>그냥 지나쳐</em> 갑니다.</span>
     </h1>
     <div class="rv d2">
-      <p class="body-en en" style="font-family:var(--f-u);font-size:14px;font-weight:300;line-height:2.3;letter-spacing:.02em;color:var(--ink-mid);margin-bottom:2.6rem">
+      <p class="body-en en" style="font-family:var(--f-u);font-size:16px;font-weight:300;line-height:2.3;letter-spacing:.02em;color:var(--ink-mid);margin-bottom:2.6rem">
         To the owners of Ginza and Tsukiji's finest establishments.<br>
         Your establishment is invisible on Google — it simply cannot be found.<br>
         Bookings are made, and then no-shows arrive on the day.<br>
@@ -2070,21 +2068,21 @@ footer {
         These are the problems I have stood beside owners to face,<br>
         <em>every single day, since 1997.</em>
       </p>
-      <p class="body-jp ja" style="font-family:var(--f-js);font-size:14.5px;font-weight:200;line-height:2.5;letter-spacing:.08em;color:var(--ink-mid);margin-bottom:2.6rem">
+      <p class="body-jp ja" style="font-family:var(--f-js);font-size:16px;font-weight:200;line-height:2.5;letter-spacing:.08em;color:var(--ink-mid);margin-bottom:2.6rem">
         銀座・築地の名店オーナーへ。<br>
         Googleで存在すら見えない。<br>
         予約してもドタキャンされる。<br>
         来てくれても、次がない。<br>
         その悩みに、<em>私はずっと現場で向き合ってきました</em>。
       </p>
-      <p class="body-en zh" style="font-family:var(--f-js);font-size:14px;font-weight:200;line-height:2.3;letter-spacing:.06em;color:var(--ink-mid);margin-bottom:2.6rem">
+      <p class="body-en zh" style="font-family:var(--f-js);font-size:16px;font-weight:200;line-height:2.3;letter-spacing:.06em;color:var(--ink-mid);margin-bottom:2.6rem">
         致銀座・築地的名店業主們。<br>
         在Google上根本找不到您的店。<br>
         好不容易訂位，卻遭到放鴿子。<br>
         客人來了一次，再也沒有回頭。<br>
         <em>這些煩惱，我在現場陪您面對了三十年。</em>
       </p>
-      <p class="body-en ko" style="font-size:14px;font-weight:200;line-height:2.3;letter-spacing:.04em;color:var(--ink-mid);margin-bottom:2.6rem">
+      <p class="body-en ko" style="font-size:16px;font-weight:200;line-height:2.3;letter-spacing:.04em;color:var(--ink-mid);margin-bottom:2.6rem">
         긴자 · 쓰키지 명점 오너분들께.<br>
         구글에서 검색해도 가게가 보이지 않습니다.<br>
         예약을 받아도 당일 노쇼가 반복됩니다.<br>
@@ -2204,9 +2202,13 @@ footer {
       <p class="sp-jp-h2 zh">「搜尋就能找到您的店」<br>讓這個狀態<em>成真</em>。</p>
       <p class="sp-jp-h2 ko">「검색하면 당신 가게가 나온다」<br>그 상태를 <em>만든다</em>.</p>
       <p class="body-en en">The world's most discerning travellers make decisions in seconds. We ensure that when your establishment appears — in a search, on a map, on a shared screen — it communicates exactly what you are: exceptional.</p>
+      <p class="body-en en" style="margin-top:1.2rem">Beyond attracting guests, the same approach applies to talent. Bilingual recruitment landing pages — designed to reach both exceptional Japanese professionals and international candidates — are an increasingly critical asset for companies expanding in Tokyo's competitive hiring market. KAIRO builds them with the same precision brought to every client-facing page.</p>
       <p class="body-jp ja">世界の富裕層が検索した瞬間、Googleマップを開いた瞬間、SNSでシェアされた瞬間——その全てで「ここは本物だ」と伝える多言語Web・MEO・ビジュアル設計を提供します。</p>
+      <p class="body-jp ja" style="margin-top:1.2rem">集客に加え、同じアプローチは採用にも応用できます。優秀な日本人人材と外国人候補者の両方にリーチするバイリンガル採用LP——英日両言語で本質を伝えられるKAIROだからこそ作れる差別化ツールです。集客LPと同じ精度・クオリティで制作します。</p>
       <p class="body-jp zh">全球頂尖旅客在數秒內做出決定。當他們搜尋、打開地圖、看到分享的畫面時，我們確保您的店家傳遞出唯一訊息：這裡是真正的好店。</p>
+      <p class="body-jp zh" style="margin-top:1.2rem">除了吸引顧客，同樣的方法也適用於人才招募。能夠同時觸及優秀日本專業人才與國際求職者的雙語招募頁面，對於在東京競爭激烈的人才市場中擴張的企業而言，已成為不可或缺的資產。KAIRO以與集客頁面相同的精準度來打造這些頁面。</p>
       <p class="body-jp ko">세계 부유층 여행자는 몇 초 안에 결정합니다. 검색할 때, 지도를 열 때, SNS에서 공유된 화면을 볼 때 — 모든 순간에 「여기는 진짜다」라고 전달하는 다국어 웹·MEO·비주얼 설계를 제공합니다.</p>
+      <p class="body-jp ko" style="margin-top:1.2rem">고객 유치를 넘어, 동일한 접근 방식이 인재 채용에도 적용됩니다. 뛰어난 일본인 전문가와 해외 지원자 모두에게 닿을 수 있는 이중 언어 채용 랜딩 페이지는, 도쿄의 치열한 채용 시장에서 확장하는 기업에게 점점 더 중요한 자산입니다. 집객 페이지와 동일한 정밀함으로 제작합니다.</p>
       <ul class="feat">
         <li><span class="en">Multilingual website (EN · JA · ZH · FR)</span><span class="ja jp-li">多言語対応Webサイト（英・日・中・仏）</span><span class="zh">多語言網站（英・日・中・法）</span><span class="ko">다국어 웹사이트（영·일·중·불）</span></li>
         <li><span class="en">Google Maps ranking optimisation — appear before competitors in "Ginza restaurant" searches</span><span class="ja jp-li">「銀座 レストラン」検索で競合より上位に表示されるGoogleマップ最適化</span><span class="zh">Google 地圖排名最佳化——在「銀座餐廳」搜尋中領先競爭對手</span><span class="ko">구글 지도 순위 최적화 — 「긴자 레스토랑」 검색에서 경쟁자보다 상위에 표시</span></li>
@@ -2582,10 +2584,9 @@ footer {
 
 <!-- ════ VIDEO WORKS ════ -->
 <section id="video-works">
-  <span class="sup rv">Video Direction</span>
-
   <div class="video-works__header">
-    <h2>映像が、ウェブサイトに<br><em>魂を吹き込む。</em></h2>
+    <span class="sup rv">Video Direction</span>
+    <h2>映像が、ウェブサイトに<em>魂を吹き込む。</em></h2>
     <p>ウェブデザインと映像制作を一社で完結。<br>
     インバウンド対応の英語映像も対応可能です。</p>
   </div>
@@ -2708,7 +2709,7 @@ footer {
             <li><a href="#presence"><span class="en">Presence</span><span class="ja jp-a">存在感の確立</span><span class="zh jp-a">建立存在感</span><span class="ko jp-a">존재감 확립</span></a></li>
             <li><a href="#trust"><span class="en">Trust</span><span class="ja jp-a">信頼の醸成</span><span class="zh jp-a">建立信賴</span><span class="ko jp-a">신뢰 구축</span></a></li>
             <li><a href="#revenue"><span class="en">Revenue</span><span class="ja jp-a">売上の設計</span><span class="zh jp-a">營收設計</span><span class="ko jp-a">매출 설계</span></a></li>
-            <li><a href="#cases"><span class="en">Concept Work</span><span class="ja jp-a">制作例</span><span class="zh">作品集</span><span class="ko">작품 모음</span></a></li>
+            <li><a href="#why"><span class="en">Why KAIRO</span><span class="ja jp-a">KAIROとは</span><span class="zh jp-a">為何選擇 KAIRO</span><span class="ko jp-a">KAIRO 소개</span></a></li>
             <li><a href="#pricing"><span class="en">Investment</span><span class="ja jp-a">料金プラン</span><span class="zh jp-a">收費方案</span><span class="ko jp-a">요금 안내</span></a></li>
           </ul>
         </nav>
@@ -2723,10 +2724,10 @@ footer {
       </div>
     </div>
     <div class="ft-bot">
-      <p class="ft-copy en">2026 KAIRO WEB DESIGN &nbsp;·&nbsp; TOKYO JAPAN</p>
-      <p class="ft-copy zh">2026 KAIRO WEB DESIGN &nbsp;·&nbsp; 東京日本</p>
-      <p class="ft-copy ko">2026 KAIRO WEB DESIGN &nbsp;·&nbsp; 도쿄 일본</p>
-      <p class="ft-copy ja">2026 KAIRO WEB DESIGN &nbsp;·&nbsp; 東京</p>
+      <p class="ft-copy en">© 2026 KAIRO WEB DESIGN &nbsp;·&nbsp; TOKYO JAPAN</p>
+      <p class="ft-copy zh">© 2026 KAIRO WEB DESIGN &nbsp;·&nbsp; 東京日本</p>
+      <p class="ft-copy ko">© 2026 KAIRO WEB DESIGN &nbsp;·&nbsp; 도쿄 일본</p>
+      <p class="ft-copy ja">© 2026 KAIRO WEB DESIGN &nbsp;·&nbsp; 東京</p>
       <div class="ft-lang">
         <button id="ft-ja" class="on" aria-label="日本語">日本語</button>
         <button id="ft-en" aria-label="English">EN</button>
