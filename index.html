@@ -2041,12 +2041,10 @@ footer {
   <div class="hero-vid" aria-hidden="true">
     <iframe
       id="hero-iframe"
-      src="https://player.vimeo.com/video/305311222?muted=1&autoplay=1&controls=0&title=0&byline=0&portrait=0&loop=0&playsinline=1&api=1"
+      src="https://player.vimeo.com/video/305311222?background=1&loop=0&autopause=0"
       style="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
-      tabindex="-1"
-      aria-hidden="true"
     ></iframe>
   </div>
   <div class="hero-cover" aria-hidden="true"></div>
@@ -3068,40 +3066,23 @@ document.querySelectorAll('.fsub').forEach(btn => {
 })();
 </script>
 
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script>
 (function() {
   var ids = [305311222, 305313129, 377450847, 396397429, 486222916, 657690215];
   var current = 0;
   var cover = document.querySelector('.hero-cover');
-  var iframe = document.getElementById('hero-iframe');
+  // Wrap the EXISTING static iframe — does not recreate it, preserves iOS autoplay permission
+  var player = new Vimeo.Player(document.getElementById('hero-iframe'));
 
-  function postToPlayer(data) {
-    try { iframe.contentWindow.postMessage(JSON.stringify(data), 'https://player.vimeo.com'); } catch(e) {}
-  }
+  player.on('ended', function() {
+    cover.style.opacity = '1';
+    current = (current + 1) % ids.length;
+    player.loadVideo(ids[current]);
+  });
 
-  function startVideo() {
-    postToPlayer({ method: 'setVolume', value: 0 });
-    postToPlayer({ method: 'play' });
-    postToPlayer({ method: 'addEventListener', value: 'finish' });
-    postToPlayer({ method: 'addEventListener', value: 'playProgress' });
-  }
-
-  window.addEventListener('message', function(e) {
-    if (e.source !== iframe.contentWindow) return;
-    var data;
-    try { data = JSON.parse(e.data); } catch(err) { return; }
-
-    if (data.event === 'ready') {
-      startVideo();
-    }
-    if (data.event === 'playProgress') {
-      if (cover.style.opacity === '1') { cover.style.opacity = '0'; }
-    }
-    if (data.event === 'finish') {
-      cover.style.opacity = '1';
-      current = (current + 1) % ids.length;
-      iframe.src = 'https://player.vimeo.com/video/' + ids[current] + '?muted=1&autoplay=1&controls=0&title=0&byline=0&portrait=0&loop=0&playsinline=1&api=1';
-    }
+  player.on('play', function() {
+    cover.style.opacity = '0';
   });
 })();
 </script>
