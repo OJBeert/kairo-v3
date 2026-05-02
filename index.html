@@ -480,7 +480,7 @@ img { display: block; max-width: 100%; }
 .hero-cover {
   position: absolute; inset: 0; z-index: 1;
   background: #14110e;
-  opacity: 0; pointer-events: none;
+  opacity: 1; pointer-events: none;
 }
 
 .hero-veil {
@@ -2041,7 +2041,7 @@ footer {
   <div class="hero-vid" aria-hidden="true">
     <iframe
       id="hero-iframe"
-      src="https://player.vimeo.com/video/305311222?background=1&loop=0&autopause=0"
+      src="https://player.vimeo.com/video/305311222?muted=1&controls=0&title=0&byline=0&portrait=0&loop=0&autopause=0&playsinline=1"
       style="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;"
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen
@@ -3072,38 +3072,50 @@ document.querySelectorAll('.fsub').forEach(btn => {
   var ids = [305311222, 305313129, 377450847, 396397429, 486222916, 657690215];
   var current = 0;
   var cover = document.querySelector('.hero-cover');
-  var player = new Vimeo.Player(document.getElementById('hero-iframe'));
+  var iframe = document.getElementById('hero-iframe');
+  var player = new Vimeo.Player(iframe);
   var transitioning = false;
   var heroPlaying = false;
 
-  // iOS fix: setMuted(true) sets video.muted=true (not just volume=0), which iOS requires for autoplay
-  player.ready().then(function() {
-    return player.setMuted(true);
-  }).then(function() {
-    return player.play();
-  }).catch(function() {});
+  function attachHandlers(p) {
+    p.on('play', function() {
+      heroPlaying = true;
+      transitioning = false;
+      cover.style.opacity = '0';
+    });
+    p.on('timeupdate', function(data) {
+      if (!transitioning && data.duration > 0 && data.seconds >= data.duration - 3) {
+        transitioning = true;
+        cover.style.opacity = '1';
+        current = (current + 1) % ids.length;
+        player.loadVideo(ids[current]);
+      }
+    });
+  }
 
-  player.on('play', function() {
-    heroPlaying = true;
-    transitioning = false;
-    cover.style.opacity = '0';
-  });
+  function startPlay(p) {
+    // setMuted(true) sets video.muted=true (not just volume=0) — iOS requires this for autoplay
+    p.ready().then(function() {
+      return p.setMuted(true);
+    }).then(function() {
+      return p.play();
+    }).catch(function() {});
+  }
 
-  // Trigger 3s before end so next video preloads while cover is up — eliminates gap
-  player.on('timeupdate', function(data) {
-    if (!transitioning && data.duration > 0 && data.seconds >= data.duration - 3) {
-      transitioning = true;
-      cover.style.opacity = '1';
-      current = (current + 1) % ids.length;
-      player.loadVideo(ids[current]);
-    }
-  });
+  attachHandlers(player);
+  startPlay(player);
 
-  // iOS 15 and below: first touch triggers play within user gesture context
+  // iOS 15 and below fallback: reload iframe within user gesture context
   document.addEventListener('touchstart', function() {
-    if (!heroPlaying) {
-      player.setMuted(true).then(function() { return player.play(); }).catch(function() {});
-    }
+    if (heroPlaying) return;
+    var src = iframe.src;
+    iframe.src = '';
+    requestAnimationFrame(function() {
+      iframe.src = src;
+      player = new Vimeo.Player(iframe);
+      attachHandlers(player);
+      startPlay(player);
+    });
   }, { once: true, passive: true });
 })();
 </script>
