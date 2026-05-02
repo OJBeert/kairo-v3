@@ -477,6 +477,12 @@ img { display: block; max-width: 100%; }
 
 
 
+.hero-cover {
+  position: absolute; inset: 0; z-index: 1;
+  background: #14110e;
+  opacity: 1; pointer-events: none;
+}
+
 .hero-veil {
   position: absolute; inset: 0;
   background: linear-gradient(
@@ -1999,13 +2005,15 @@ footer {
 <section id="hero" aria-label="ヒーローセクション">
   <div class="hero-vid" aria-hidden="true">
     <iframe
-      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=1&muted=1&playsinline=1&autopause=0"
+      id="hero-iframe"
+      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=0&muted=1&playsinline=1&autopause=0"
       style="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;"
       allow="autoplay; fullscreen"
       tabindex="-1"
       aria-hidden="true"
     ></iframe>
   </div>
+  <div class="hero-cover" aria-hidden="true"></div>
   <div class="hero-veil" aria-hidden="true"></div>
 </section>
 
@@ -2941,6 +2949,37 @@ document.querySelectorAll('.fsub').forEach(btn => {
 })();
 </script>
 
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+(function() {
+  var ids = [305311222, 305313129, 377450847, 396397429, 486222916, 657690215];
+  var current = 0;
+  var cover = document.querySelector('.hero-cover');
+  var player = new Vimeo.Player(document.getElementById('hero-iframe'));
+  var transitioning = false;
+
+  player.on('play', function() {
+    if (transitioning) return;
+    cover.style.transition = 'opacity 0s';
+    cover.style.opacity = '0';
+  });
+
+  player.on('ended', function() {
+    transitioning = true;
+    cover.style.transition = 'none';
+    cover.style.opacity = '1';
+    current = (current + 1) % ids.length;
+    player.loadVideo(ids[current]);
+  });
+
+  player.on('timeupdate', function() {
+    if (!transitioning) return;
+    transitioning = false;
+    cover.style.transition = 'opacity 0s';
+    cover.style.opacity = '0';
+  });
+})();
+</script>
 
 </body>
 </html>
