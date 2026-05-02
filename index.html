@@ -480,7 +480,7 @@ img { display: block; max-width: 100%; }
 .hero-cover {
   position: absolute; inset: 0; z-index: 1;
   background: #14110e;
-  opacity: 1; pointer-events: none;
+  opacity: 0; pointer-events: none;
 }
 
 .hero-veil {
@@ -1807,6 +1807,36 @@ footer {
   color: var(--ink); margin-bottom: 2.8rem;
 }
 
+/* ══ RECRUITMENT LP ══ */
+#recruit { background: var(--ink); padding: 9rem 2.5rem; }
+.rec-in { max-width: 1100px; margin: 0 auto; }
+.rec-top { margin-bottom: 4rem; }
+#recruit .sup { color: rgba(242,237,228,.4); display: block; margin-bottom: 1.6rem; }
+.rec-h2 {
+  font-family: var(--f-d); font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 300; line-height: 1.1; letter-spacing: -.01em; color: var(--cream); margin-bottom: 1.4rem;
+}
+.rec-h2 em { font-style: italic; color: var(--warm); }
+.rec-jp-h2 {
+  font-family: var(--f-js); font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+  font-weight: 200; line-height: 1.45; letter-spacing: .065em; color: var(--cream); margin-bottom: 1.4rem;
+}
+.rec-jp-h2 em { font-style: italic; color: var(--warm); }
+.rec-lead { font-family: var(--f-u); font-size: 16px; font-weight: 300; line-height: 2; letter-spacing: .02em; color: rgba(242,237,228,.6); max-width: 600px; margin-bottom: 5rem; }
+.rec-jp-lead { font-family: var(--f-ju); font-size: 16px; font-weight: 200; line-height: 2.2; letter-spacing: .06em; color: rgba(242,237,228,.6); max-width: 600px; margin-bottom: 5rem; }
+.rec-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: rgba(242,237,228,.1); margin-bottom: 5rem; }
+.rec-card { background: var(--ink); padding: 3rem 2.8rem; transition: background var(--t1); }
+.rec-card:hover { background: rgba(242,237,228,.04); }
+.rec-num { font-family: var(--f-u); font-size: 9px; font-weight: 300; letter-spacing: .3em; color: var(--warm); display: block; margin-bottom: 1.2rem; }
+.rec-card-title { font-family: var(--f-d); font-size: 1.5rem; font-weight: 300; color: var(--cream); margin-bottom: .8rem; line-height: 1.2; }
+.rec-card-body { font-family: var(--f-u); font-size: 15px; font-weight: 300; line-height: 1.9; letter-spacing: .02em; color: rgba(242,237,228,.65); }
+.rec-jp-card-body { font-family: var(--f-ju); font-size: 15px; font-weight: 200; line-height: 2.2; letter-spacing: .06em; color: rgba(242,237,228,.65); }
+#recruit .tcta { color: var(--cream); }
+@media (max-width: 768px) {
+  #recruit { padding: 6rem 1.4rem; }
+  .rec-grid { grid-template-columns: 1fr; }
+}
+
 /* ── Video Works Section ── */
 #video-works {
   padding: 120px 0;
@@ -1948,9 +1978,13 @@ footer {
       <span class="en">Investment</span><span class="ja">料金プラン</span><span class="zh">收費方案</span><span class="ko">요금 안내</span>
       <span class="ov-num">06</span>
     </a>
+    <a href="#recruit">
+      <span class="en">Recruitment LP</span><span class="ja">採用LP</span><span class="zh">招募頁面</span><span class="ko">채용 LP</span>
+      <span class="ov-num">07</span>
+    </a>
     <a href="#enquire">
       <span class="en">Enquire</span><span class="ja">無料相談</span><span class="zh">聯絡我們</span><span class="ko">문의</span>
-      <span class="ov-num">07</span>
+      <span class="ov-num">08</span>
     </a>
   </nav>
   <div class="ov-foot">
@@ -2590,6 +2624,88 @@ footer {
 
 <hr class="hr">
 
+<!-- ════ RECRUITMENT LP ════ -->
+<section id="recruit" aria-labelledby="rec-h">
+  <div class="rec-in">
+
+    <div class="rec-top rv">
+      <span class="sup en">Recruitment LP</span>
+      <span class="sup ja">採用LP</span>
+      <span class="sup zh">招募頁面</span>
+      <span class="sup ko">채용 랜딩 페이지</span>
+      <h2 id="rec-h" class="rec-h2 en">The same precision.<br><em>For talent, not just guests.</em></h2>
+      <p class="rec-jp-h2 ja">集客と同じ精度で、<br><em>採用も変える</em>。</p>
+      <p class="rec-jp-h2 zh">相同的精準度，<br><em>用於招募人才</em>。</p>
+      <p class="rec-jp-h2 ko">같은 정밀함으로,<br><em>채용도 바꾼다</em>.</p>
+    </div>
+
+    <div class="rv d1">
+      <p class="rec-lead en">A bilingual recruitment landing page — built to the same standard as your best client-facing work. One brief, one partner, one coherent brand.</p>
+      <p class="rec-jp-lead ja">バイリンガル採用LP——集客LPと同じ水準で、一社で完結します。ひとつのブリーフ、ひとつのパートナー、一貫したブランド。</p>
+      <p class="rec-jp-lead zh">雙語招募頁面——以與集客頁面相同的水準，由同一家公司一手包辦。</p>
+      <p class="rec-jp-lead ko">이중 언어 채용 랜딩 페이지——집객 페이지와 동일한 수준으로 한 곳에서 완결합니다.</p>
+    </div>
+
+    <div class="rec-grid rv d2">
+      <div class="rec-card">
+        <span class="rec-num">01</span>
+        <p class="rec-card-title en">Bilingual by default.</p>
+        <p class="rec-card-title ja">英日ネイティブ品質。</p>
+        <p class="rec-card-title zh">雙語母語水準。</p>
+        <p class="rec-card-title ko">이중 언어 네이티브 품질.</p>
+        <p class="rec-card-body en">Reach exceptional Japanese candidates and international talent in both languages — written natively, not translated. The difference is immediate.</p>
+        <p class="rec-jp-card-body ja">優秀な日本人候補者と外国人人材の両方に、ネイティブ品質の英日で届けます。翻訳ではなく、書き下ろし。その差は一目でわかります。</p>
+        <p class="rec-jp-card-body zh">以英日母語品質，同時觸及優秀的日本求職者與國際人才——原創撰寫，非翻譯。差異立見。</p>
+        <p class="rec-jp-card-body ko">뛰어난 일본인 지원자와 해외 인재 모두에게 영·일 네이티브 품질로 전달합니다. 번역이 아닌 원문 작성. 차이는 즉시 느껴집니다.</p>
+      </div>
+      <div class="rec-card">
+        <span class="rec-num">02</span>
+        <p class="rec-card-title en">Conversion-first design.</p>
+        <p class="rec-card-title ja">成果を生む設計。</p>
+        <p class="rec-card-title zh">以成效為核心的設計。</p>
+        <p class="rec-card-title ko">성과 중심 설계.</p>
+        <p class="rec-card-body en">The same approach that turns website visitors into reservations, applied to your hiring page. Candidates don't hesitate — they apply.</p>
+        <p class="rec-jp-card-body ja">ウェブ訪問者を予約客に変える設計思想を、採用LPにそのまま応用します。候補者が迷わず、応募するページ。</p>
+        <p class="rec-jp-card-body zh">將網站訪客轉化為預約客人的設計思維，直接應用於招募頁面。讓候補者不猶豫，直接投遞履歷。</p>
+        <p class="rec-jp-card-body ko">사이트 방문자를 예약 손님으로 전환하는 설계 철학을 채용 페이지에 그대로 적용합니다. 지원자가 망설이지 않고 지원하는 페이지.</p>
+      </div>
+      <div class="rec-card">
+        <span class="rec-num">03</span>
+        <p class="rec-card-title en">Video-integrated.</p>
+        <p class="rec-card-title ja">映像込みで完結。</p>
+        <p class="rec-card-title zh">影像一體化。</p>
+        <p class="rec-card-title ko">영상 통합 완결.</p>
+        <p class="rec-card-body en">Add a recruitment film to your landing page. KAIRO conceives, shoots, edits, and publishes — under one roof. No separate production company needed.</p>
+        <p class="rec-jp-card-body ja">採用動画をLPに組み込む。KAIROは企画・撮影・編集・公開を一社で完結します。映像制作会社を別に探す必要はありません。</p>
+        <p class="rec-jp-card-body zh">將招募影片整合至頁面。KAIRO一手包辦企劃、拍攝、剪輯與發布——無需另找影像製作公司。</p>
+        <p class="rec-jp-card-body ko">채용 영상을 랜딩 페이지에 통합합니다. KAIRO는 기획·촬영·편집·발행을 한 지붕 아래서 완결합니다.</p>
+      </div>
+      <div class="rec-card">
+        <span class="rec-num">04</span>
+        <p class="rec-card-title en">Tokyo market expertise.</p>
+        <p class="rec-card-title ja">東京市場のリアル。</p>
+        <p class="rec-card-title zh">東京市場的真實洞察。</p>
+        <p class="rec-card-title ko">도쿄 시장의 현실.</p>
+        <p class="rec-card-body en">Thirty years on the ground in Tokyo. We know what makes both Japanese professionals and international candidates say yes — built into every line of copy.</p>
+        <p class="rec-jp-card-body ja">東京に30年。日本人プロフェッショナルも外国人候補者も、何に動かされるかを知っています。それをすべての文章に込めます。</p>
+        <p class="rec-jp-card-body zh">在東京扎根三十年。我們深知什麼能打動日本專業人才與國際候補者——並將其融入每一行文字。</p>
+        <p class="rec-jp-card-body ko">도쿄에서 30년. 일본인 전문가와 해외 지원자 모두를 움직이는 것이 무엇인지 압니다——모든 문장에 담습니다.</p>
+      </div>
+    </div>
+
+    <a href="#enquire" class="tcta rv d3">
+      <span class="en">Enquire about recruitment LP</span>
+      <span class="ja">採用LPについて相談する</span>
+      <span class="zh">諮詢招募頁面</span>
+      <span class="ko">채용 랜딩 페이지 문의</span>
+      <svg width="22" height="8" viewBox="0 0 22 8" fill="none" aria-hidden="true"><path d="M0 4h20M16 1l5 3-5 3" stroke="currentColor" stroke-width=".85"/></svg>
+    </a>
+
+  </div>
+</section>
+
+<hr class="hr">
+
 <!-- ════ VIDEO WORKS ════ -->
 <section id="video-works">
   <div class="video-works__header">
@@ -2719,6 +2835,7 @@ footer {
             <li><a href="#revenue"><span class="en">Revenue</span><span class="ja jp-a">売上の設計</span><span class="zh jp-a">營收設計</span><span class="ko jp-a">매출 설계</span></a></li>
             <li><a href="#why"><span class="en">Why KAIRO</span><span class="ja jp-a">KAIROとは</span><span class="zh jp-a">為何選擇 KAIRO</span><span class="ko jp-a">KAIRO 소개</span></a></li>
             <li><a href="#pricing"><span class="en">Investment</span><span class="ja jp-a">料金プラン</span><span class="zh jp-a">收費方案</span><span class="ko jp-a">요금 안내</span></a></li>
+            <li><a href="#recruit"><span class="en">Recruitment LP</span><span class="ja jp-a">採用LP</span><span class="zh jp-a">招募頁面</span><span class="ko jp-a">채용 LP</span></a></li>
           </ul>
         </nav>
         <nav aria-label="お問い合わせ">
@@ -2960,13 +3077,10 @@ document.querySelectorAll('.fsub').forEach(btn => {
   var triggered = false;
 
   player.on('play', function() {
-    if (!transitioning) {
-      cover.style.opacity = '0';
-    } else {
-      transitioning = false;
-      triggered = false;
-      cover.style.opacity = '0';
-    }
+    if (!transitioning) return;
+    transitioning = false;
+    triggered = false;
+    cover.style.opacity = '0';
   });
 
   player.on('timeupdate', function(data) {
