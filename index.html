@@ -2041,9 +2041,10 @@ footer {
   <div class="hero-vid" aria-hidden="true">
     <iframe
       id="hero-iframe"
-      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&muted=1&loop=0&playsinline=1&api=1"
+      src="https://player.vimeo.com/video/305311222?muted=1&autoplay=1&controls=0&title=0&byline=0&portrait=0&loop=0&playsinline=1&api=1"
       style="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;"
       allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
       tabindex="-1"
       aria-hidden="true"
     ></iframe>
@@ -3078,7 +3079,9 @@ document.querySelectorAll('.fsub').forEach(btn => {
     try { iframe.contentWindow.postMessage(JSON.stringify(data), 'https://player.vimeo.com'); } catch(e) {}
   }
 
-  function subscribe() {
+  function startVideo() {
+    postToPlayer({ method: 'setVolume', value: 0 });
+    postToPlayer({ method: 'play' });
     postToPlayer({ method: 'addEventListener', value: 'finish' });
     postToPlayer({ method: 'addEventListener', value: 'playProgress' });
   }
@@ -3089,7 +3092,7 @@ document.querySelectorAll('.fsub').forEach(btn => {
     try { data = JSON.parse(e.data); } catch(err) { return; }
 
     if (data.event === 'ready') {
-      subscribe();
+      startVideo();
     }
     if (data.event === 'playProgress') {
       if (cover.style.opacity === '1') { cover.style.opacity = '0'; }
@@ -3097,7 +3100,7 @@ document.querySelectorAll('.fsub').forEach(btn => {
     if (data.event === 'finish') {
       cover.style.opacity = '1';
       current = (current + 1) % ids.length;
-      iframe.src = 'https://player.vimeo.com/video/' + ids[current] + '?background=1&autoplay=1&muted=1&loop=0&playsinline=1&api=1';
+      iframe.src = 'https://player.vimeo.com/video/' + ids[current] + '?muted=1&autoplay=1&controls=0&title=0&byline=0&portrait=0&loop=0&playsinline=1&api=1';
     }
   });
 })();
