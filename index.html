@@ -1896,6 +1896,15 @@ footer {
   #video-works { padding: 80px 24px; }
   .video-works__header { flex-direction: column; align-items: flex-start; }
   .video-works__header > p { max-width: 100%; }
+  .video-works__bezel-outer {
+    margin-left: -24px;
+    margin-right: -24px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 4px 0;
+  }
+  .video-works__bezel-inner { border-radius: 0; }
   .video-works__caption { flex-direction: column; align-items: flex-start; }
 }
 </style>
@@ -2529,6 +2538,35 @@ footer {
       </div>
     </article>
 
+    <!-- Row 5: Monthly Support + Video -->
+    <article class="plan-row rv d5" aria-labelledby="p-vid-mo">
+      <div class="plan-row-label">
+        <span class="plan-row-name en" id="p-vid-mo">Monthly + Video</span>
+        <span class="plan-row-name ja">映像込み月額サポート</span>
+        <span class="plan-row-name zh">含影像月費支援</span>
+        <span class="plan-row-name ko">영상 포함 월간 지원</span>
+        <div class="plan-row-price">¥80,000</div>
+        <div class="plan-row-per en">Per month · ongoing</div>
+        <div class="plan-row-per ja">月額・継続</div>
+        <div class="plan-row-per zh">每月・持續</div>
+        <div class="plan-row-per ko">월정·지속</div>
+      </div>
+      <div class="plan-row-body">
+        <ul class="plan-list">
+          <li><span class="en">All Monthly Support inclusions</span><span class="ja jp-li">月額サポートの全内容</span><span class="zh">月費支援的全部內容</span><span class="ko">월간 지원의 모든 내용</span></li>
+          <li><span class="en">Web maintenance &amp; light edits</span><span class="ja jp-li">ウェブ保守・軽編集</span><span class="zh">網站維護・輕量修改</span><span class="ko">웹 유지보수·경편집</span></li>
+          <li><span class="en">1 × monthly short-form video edit</span><span class="ja jp-li">月1本 SNSショート動画編集</span><span class="zh">每月短影音剪輯（1支）</span><span class="ko">월 1개 SNS 숏폼 영상 편집</span></li>
+          <li><span class="en">Video performance report</span><span class="ja jp-li">映像パフォーマンスレポート</span><span class="zh">影像成效報告</span><span class="ko">영상 성과 리포트</span></li>
+        </ul>
+      </div>
+      <div class="plan-row-cta">
+        <a href="#enquire" class="tcta">
+          <span class="en">Enquire</span><span class="ja">相談する</span>
+          <svg width="22" height="8" viewBox="0 0 22 8" fill="none" aria-hidden="true"><path d="M0 4h20M16 1l5 3-5 3" stroke="currentColor" stroke-width=".85"/></svg>
+        </a>
+      </div>
+    </article>
+
   </div>
   <div class="roi rv">
     <span class="roi-d">—</span>
@@ -2622,6 +2660,7 @@ footer {
             <option value="premium">Premium — ¥500,000</option>
             <option value="monthly">Monthly Support — ¥50,000/月</option>
             <option value="video">Web + Video 映像込みプラン — ¥800,000〜</option>
+            <option value="video-monthly">映像込み月額サポート — ¥80,000/月</option>
             <option value="consult">まず相談したい / Initial consultation only</option>
           </select>
         </div>
