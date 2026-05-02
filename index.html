@@ -1930,6 +1930,7 @@ footer {
 @media (max-width: 768px) {
   #video-works { padding: 60px 0; }
   .video-works__header { padding: 0 20px; margin-bottom: 28px; }
+  .video-works__header h2 { font-size: 15px; white-space: nowrap; }
   .video-works__bezel-outer {
     margin: 0;
     border-radius: 0;
@@ -3074,24 +3075,18 @@ document.querySelectorAll('.fsub').forEach(btn => {
   var cover = document.querySelector('.hero-cover');
   var player = new Vimeo.Player(document.getElementById('hero-iframe'));
   var transitioning = false;
-  var triggered = false;
 
   player.on('play', function() {
     if (!transitioning) return;
     transitioning = false;
-    triggered = false;
     cover.style.opacity = '0';
   });
 
-  player.on('timeupdate', function(data) {
-    if (triggered || transitioning) return;
-    if (data.duration > 0 && (data.duration - data.seconds) <= 2) {
-      triggered = true;
-      transitioning = true;
-      cover.style.opacity = '1';
-      current = (current + 1) % ids.length;
-      player.loadVideo(ids[current]);
-    }
+  player.on('ended', function() {
+    transitioning = true;
+    cover.style.opacity = '1';
+    current = (current + 1) % ids.length;
+    player.loadVideo(ids[current]);
   });
 })();
 </script>
