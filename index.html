@@ -51,7 +51,6 @@
 <link rel="preconnect" href="https://player.vimeo.com">
 <link rel="preconnect" href="https://f.vimeocdn.com" crossorigin>
 <link rel="preconnect" href="https://fresnel.vimeocdn.com" crossorigin>
-<script src="https://player.vimeo.com/api/player.js" defer></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400&family=Noto+Sans+TC:wght@200;300;400&family=Noto+Sans+KR:wght@200;300;400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;300;400;500&family=Noto+Serif+JP:wght@200;300&family=Noto+Sans+JP:wght@200;300&display=swap" rel="stylesheet">
 
@@ -585,7 +584,6 @@ img { display: block; max-width: 100%; }
   position: absolute; inset: 0; z-index: 1;
   background: #14110e;
   opacity: 0; pointer-events: none;
-  transition: opacity 0.25s ease;
 }
 
 .hero-veil {
@@ -2146,11 +2144,9 @@ footer {
   <div class="hero-vid" aria-hidden="true">
     <iframe
       id="hero-iframe"
-      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=0&muted=1&playsinline=1&autopause=0&transparent=0"
+      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=0&muted=1&playsinline=1&autopause=0"
       style="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;"
-      allow="autoplay; fullscreen; picture-in-picture"
-      playsinline
-      webkit-playsinline
+      allow="autoplay; fullscreen"
       tabindex="-1"
       aria-hidden="true"
     ></iframe>
@@ -2506,12 +2502,12 @@ footer {
 
         <!-- EN: Founder story -->
         <p class="en" style="font-style:italic;color:var(--ink);font-family:var(--f-d);font-size:1.05rem;margin-bottom:1.4rem;line-height:1.7">
-          "In 1997, I arrived in Tokyo barely speaking a word of Japanese."
+          "In 1997, I arrived in Tokyo with almost no Japanese."
         </p>
-        <p class="en">Most of the city's finest establishments couldn't accommodate foreign guests. I kept returning to Ginza — and kept being turned away from places I wanted to experience. As an outsider, I felt it viscerally: extraordinary restaurants were losing extraordinary guests simply because of a language barrier that nobody had thought to design around.</p>
-        <p class="en" style="margin-top:1.2rem">Walking these streets every day for thirty years, I arrived at one conviction: the problem is never the food, the location, or the service. The problem is that nobody has built the infrastructure to let the world find you. Most inbound consultants advise from spreadsheets. Albert, KAIRO's founder, walks Ginza and Tsukiji every single day — past every queue, down every alley — because <em>strategies built from real observation are the ones that actually work</em>.</p>
-        <p class="en" style="margin-top:1.2rem">My native fluency in both English and Japanese is not mere translation. It is the ability to understand what an affluent traveller from London or Singapore needs to feel confident booking a kaiseki counter in Tsukiji — and to frame your establishment in precisely that language.</p>
-        <p class="en" style="margin-top:1.2rem">What most web designers cannot offer — and what sets KAIRO entirely apart — is fifteen years of professional video direction running in parallel with this ground-level work. Corporate films, brand narratives, inbound-targeted English content, short-form social video: the full range, directed and edited in-house. When a Ginza restaurant needs a hero film for their new website, they do not need to coordinate between a web studio and a separate production company, brief two creative directors, and hope the results feel coherent. KAIRO conceives, shoots, edits, and publishes — in English and Japanese — under one roof. In Tokyo's design market, this is genuinely rare.</p>
+        <p class="en">At the time, most of Japan's finest restaurants couldn't take foreign reservations. I kept returning to Ginza — and kept being turned away from places I wanted to experience. As a foreigner, I felt it in my body: great restaurants were losing great guests for no reason other than a language wall no one had thought to remove.</p>
+        <p class="en" style="margin-top:1.2rem">Walking these streets every day, I came to one conviction. The problem is never the food, the location, or the service. The problem is that the infrastructure for being found simply doesn't exist yet. Speaking both English and Japanese as a native isn't translation ability. It is the ability to understand what makes an affluent traveller feel confident booking a kaiseki counter in Tsukiji — and to present your establishment in exactly that register.</p>
+        <p class="en" style="margin-top:1.2rem">So I don't work from spreadsheets. I walk the back streets of Ginza and Tsukiji every day. I watch how guests move through these streets, and I build strategy from what I actually see.</p>
+        <p class="en" style="margin-top:1.2rem">What most web designers cannot offer — and what makes KAIRO genuinely different — is fifteen years of professional video direction, running alongside this fieldwork. Corporate films, brand narratives, English content for inbound visitors, short-form social video. All conceived, directed, and edited in-house. When a Ginza restaurant needs a hero film for a new website, there's no need to manage a web studio and a production company separately, brief two creative directors, and hope the results feel coherent. KAIRO handles it — in English and Japanese — under one roof. In Tokyo's design market, that is rare.</p>
         <blockquote style="border-left:2px solid var(--warm);padding-left:1.6rem;margin:1.8rem 0 0;font-family:var(--f-d);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.75" class="en">
           "We don't translate words. We translate culture."<br>
           <span style="font-style:normal;font-size:.75rem;font-family:var(--f-u);letter-spacing:.2em;color:var(--ink-light)">— Albert Junior, Founder, KAIRO</span>
@@ -2519,12 +2515,15 @@ footer {
 
         <!-- JA: Founder story -->
         <p class="jp-p ja" style="font-style:italic;font-family:var(--f-js);font-size:1rem;color:var(--ink);margin-bottom:1.4rem;line-height:1.7">
-          「1997年、私は日本語がほぼ話せない状態で東京に降り立ちました。」
+          「1997年、私はほとんど日本語を話せないまま、東京に越してきました。」
         </p>
-        <p class="jp-p ja">当時、日本の名店のほとんどは外国語での予約を受け付けていませんでした。私は銀座に通い続けながら、何度も「入れなかった店」を経験しました。多くの名店が、言語の壁のせいだけで外国人客を取りこぼしていることを、外国人の自分だからこそ、肌で感じ続けていました。</p>
-        <p class="jp-p ja" style="margin-top:1.2rem">毎日この街を歩くなかで、ひとつの確信を得ました。問題は料理でも立地でもサービスでもない。「存在を知ってもらうための設計」が、まだ誰もやっていないのだと。私が英語と日本語の両方をネイティブとして持っていることは、単なる「翻訳能力」ではありません。海外富裕層が何に信頼を感じ、何に不安を覚えるか——その感覚を、日本の名店の文化的文脈とともに理解できる人間は、ほぼ存在しない。</p>
-        <p class="jp-p ja" style="margin-top:1.2rem">だから私は、机の前でデータを見ません。毎日、銀座と築地の路地裏を歩きます。今日の観光客の動きを、自分の目で確かめながら、あなたの店の戦略を考えます。</p>
-        <p class="jp-p ja" style="margin-top:1.2rem">多くのウェブデザイナーが提供できないもの——それが、KAIROをまったく異なる存在にしています。30年の現場経験と並走してきた、15年の映像ディレクションキャリアです。企業プロモーション映像、ブランドナラティブ、インバウンド富裕層向けの英語映像、SNSショート動画。すべてを自社内でディレクション・編集まで完結します。銀座の名店が新しいウェブサイト用のヒーロー映像を必要とするとき、ウェブ制作会社と映像制作会社を別々に動かし、2人のクリエイティブディレクターにブリーフィングし、仕上がりの一貫性を祈る必要はありません。KAIROは企画・撮影・編集・公開を、英語と日本語の両方で、一社として完結させます。東京のデザイン市場において、これは本当に希少なことです。</p>
+        <p class="jp-p ja">当時、銀座の名店の多くは、外国語での予約を受け付けていなかった。子供の目には、その壁が街のあちこちに見えた。言語ひとつで外国人客を取りこぼし続けているこの現実を、私はこの街で育ちながら、ずっと肌で感じてきました。</p>
+        <p class="jp-p ja" style="margin-top:1.2rem">この街で育つなかで、ひとつの確信に至った。問題は料理でも、立地でも、サービスでもない。「存在を知ってもらうための設計」が、まだ誰も本気で手をつけていないのだと。</p>
+        <p class="jp-p ja" style="margin-top:1.2rem">英語と日本語をネイティブとして操ること——それは単なる翻訳能力ではありません。海外の富裕層が何に信頼を置き、何に距離を感じるか。その感覚を、日本の名店の文化的文脈とともに理解できる人間は、まずいない。</p>
+        <p class="jp-p ja" style="margin-top:1.2rem">だから私は、デスクの前でデータを眺めません。毎日、銀座と築地の路地を自分の足で歩く。今日の街の空気を肌で感じながら、あなたの店のことを考えています。</p>
+        <p class="jp-p ja" style="margin-top:1.2rem">多くのウェブデザイナーには、持ち合わせていないものがあります。30年間この街で積み重ねてきた現場感覚と、15年間の映像ディレクションキャリアです。</p>
+        <p class="jp-p ja" style="margin-top:1.2rem">企業プロモーション映像、ブランドナラティブ、富裕層インバウンド向けの英語コンテンツ、SNSショート動画。すべての企画・撮影・編集を、英語と日本語の両方で、社内だけで完結します。</p>
+        <p class="jp-p ja" style="margin-top:1.2rem">銀座の名店がヒーロー映像を必要とするとき、制作会社と映像会社に別々に発注し、ふたりのディレクターに個別にブリーフィングして、仕上がりの一貫性を祈る——そんな手間は不要です。KAIROは企画から公開まで、すべてをひとつの会社として担います。東京のデザイン市場において、それは本当に希少なことです。</p>
         <blockquote style="border-left:2px solid var(--warm);padding-left:1.6rem;margin:1.8rem 0 0;font-family:var(--f-d);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.75" class="ja">
           "We don't translate words. We translate culture."<br>
           <span style="font-style:normal;font-size:.75rem;font-family:var(--f-u);letter-spacing:.2em;color:var(--ink-light)">— Albert Junior, Founder, KAIRO</span>
@@ -2532,8 +2531,10 @@ footer {
 
         <!-- ZH: Founder story -->
         <p class="zh" style="font-style:italic;font-family:var(--f-js);font-size:1rem;color:var(--ink);margin-bottom:1.4rem;line-height:1.7">「1997年，我幾乎不會說日文就來到了東京。」</p>
-        <p class="zh" style="font-family:var(--f-js);font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.06em;color:var(--ink-mid)">當時，日本大多數名店無法接待外國客人。我持續走訪銀座，卻一再被拒於門外。身為外國人，我切身感受到：許多名店只因語言障礙，就白白流失了高價值的國際客人。三十年間每天走在這條街上，我得出一個確信——問題不在料理、地點或服務，而在於「讓世界找到你的設計」從未建立。我不在辦公桌前看數據。我每天走在銀座與築地的巷弄裡，用自己的眼睛確認今天的觀光客動向，再為您的店家制定策略。</p>
-        <p class="zh" style="font-family:var(--f-js);font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.06em;color:var(--ink-mid);margin-top:1.2rem">大多數網頁設計師無法提供的——正是讓KAIRO截然不同的關鍵——是與三十年現場工作並行的十五年專業影像導演資歷。企業宣傳片、品牌敘事影片、針對訪日富裕旅客的英語影像內容、短影音社群素材：完整的影像製作範疇，全程在內部導演與剪輯完成。當銀座的名店需要為新網站製作主視覺影片時，無需在網頁公司與影像製作公司之間協調，無需向兩位創意總監分別簡報，也無需期盼最終成果能夠風格一致。KAIRO以中英日三語，在同一屋簷下完成企劃、拍攝、剪輯與發布。在東京的設計市場中，這確實極為罕見。</p>
+        <p class="zh" style="font-family:var(--f-js);font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.06em;color:var(--ink-mid)">那個年代，日本大多數名店都無法接待外國客人。我反覆造訪銀座，卻一再被拒於門外。身為外國人，我切身感受到：那些名店只因語言的一道牆，就白白失去了本該屬於它們的客人。</p>
+        <p class="zh" style="font-family:var(--f-js);font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.06em;color:var(--ink-mid);margin-top:1.2rem">每天走在這條街上，我得出了一個確信。問題從來不是料理、地點或服務。問題是「讓世界找到你的設計」根本還不存在。我能以英語和日語雙母語思考，這不是翻譯能力。這是理解一位旅客需要什麼才會放心訂下您的店——並以恰好合適的語言呈現它。</p>
+        <p class="zh" style="font-family:var(--f-js);font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.06em;color:var(--ink-mid);margin-top:1.2rem">所以我不在辦公桌前看數據。我每天走在銀座與築地的巷弄裡，親眼確認今天旅客的動向，再為您的店制定策略。</p>
+        <p class="zh" style="font-family:var(--f-js);font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.06em;color:var(--ink-mid);margin-top:1.2rem">大多數網頁設計師無法提供的——正是讓KAIRO截然不同的關鍵——是與三十年現場工作並行的十五年專業影像導演資歷。企業宣傳片、品牌故事影片、針對富裕訪日旅客的英語影像內容、短影音素材。全程由內部一手企劃、拍攝、剪輯完成。當銀座的名店需要為新網站製作主視覺影片，不必分別協調網頁公司與影像公司，不必向兩位創意總監分別說明，也不必期盼風格一致。KAIRO以英語和日語，在同一屋簷下完成一切。在東京的設計市場中，這確實極為罕見。</p>
         <blockquote style="border-left:2px solid var(--warm);padding-left:1.6rem;margin:1.8rem 0 0;font-family:var(--f-d);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.75" class="zh">
           "We don't translate words. We translate culture."<br>
           <span style="font-style:normal;font-size:.75rem;font-family:var(--f-u);letter-spacing:.2em;color:var(--ink-light)">— Albert Junior, Founder, KAIRO</span>
@@ -2541,8 +2542,10 @@ footer {
 
         <!-- KO: Founder story -->
         <p class="ko" style="font-style:italic;font-size:1rem;color:var(--ink);margin-bottom:1.4rem;line-height:1.7">「1997년, 저는 일본어를 거의 못 하는 상태로 도쿄에 왔습니다.」</p>
-        <p class="ko" style="font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.04em;color:var(--ink-mid)">당시 일본의 대부분 명점은 외국어 예약을 받지 못했습니다. 긴자를 계속 다니면서 "들어가지 못한 가게"를 몇 번이나 경험했습니다. 외국인이었기에 몸으로 느꼈습니다—언어의 장벽만으로 고가치 외국 손님을 잃는 명점들을. 삼십 년간 매일 이 거리를 걸으며 하나의 확신을 얻었습니다. 문제는 음식도, 입지도, 서비스도 아닙니다. 세상이 당신을 찾을 수 있는 설계가 아직 없는 것입니다. 저는 책상 앞에서 데이터를 보지 않습니다. 매일 긴자와 쓰키지의 골목을 걸으며 직접 눈으로 확인하고, 당신의 가게 전략을 생각합니다.</p>
-        <p class="ko" style="font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.04em;color:var(--ink-mid);margin-top:1.2rem">대부분의 웹 디자이너가 제공할 수 없는 것——그것이 KAIRO를 완전히 다른 존재로 만드는 요소입니다——바로 30년의 현장 경험과 함께해온 15년의 영상 디렉팅 경력입니다. 기업 홍보 영상, 브랜드 내러티브, 인바운드 부유층을 겨냥한 영어 영상 콘텐츠, 소셜미디어용 숏폼 동영상. 전체 범위를 사내에서 디렉팅과 편집까지 완결합니다. 긴자의 명점이 새 웹사이트를 위한 히어로 영상을 필요로 할 때, 웹 제작사와 영상 제작사를 따로 조율하고, 두 명의 크리에이티브 디렉터에게 브리핑하며, 결과물의 일관성을 바랄 필요가 없습니다. KAIRO는 영어와 일본어로, 한 지붕 아래에서 기획·촬영·편집·발행을 완결합니다. 도쿄 디자인 시장에서, 이것은 진정으로 희소한 일입니다.</p>
+        <p class="ko" style="font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.04em;color:var(--ink-mid)">당시 일본의 대부분 명점은 외국어 예약을 받을 수 없었습니다. 저는 계속 긴자를 찾았지만, 몇 번이고 「들어가지 못한 가게」를 경험했습니다. 외국인이었기에 몸으로 느꼈습니다. 수많은 명점이 언어의 벽 하나 때문에, 본래 와야 할 손님을 놓치고 있었습니다.</p>
+        <p class="ko" style="font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.04em;color:var(--ink-mid);margin-top:1.2rem">매일 이 거리를 걸으며, 하나의 확신을 얻었습니다. 문제는 음식도, 입지도, 서비스도 아닙니다. 「발견될 수 있는 설계」가 아직 존재하지 않는 것입니다. 영어와 일본어 모두를 모국어로 가진다는 것은 단순한 번역 능력이 아닙니다. 여행자가 안심하고 당신의 가게를 예약하기 위해 무엇이 필요한지를 이해하고, 정확히 그 언어로 전달할 수 있는 것입니다.</p>
+        <p class="ko" style="font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.04em;color:var(--ink-mid);margin-top:1.2rem">그래서 저는 책상 앞에서 데이터를 보지 않습니다. 매일 긴자와 쓰키지의 골목을 걷습니다. 오늘 관광객이 어떻게 움직이는지 직접 눈으로 확인하면서, 당신의 가게 전략을 생각합니다.</p>
+        <p class="ko" style="font-size:.93rem;font-weight:200;line-height:2;letter-spacing:.04em;color:var(--ink-mid);margin-top:1.2rem">대부분의 웹 디자이너가 제공할 수 없는 것——그것이 KAIRO를 전혀 다른 존재로 만드는 이유입니다——30년의 현장 경험과 함께해온 15년의 영상 디렉팅 경력입니다. 기업 홍보 영상, 브랜드 내러티브, 부유층 방일객을 위한 영어 영상 콘텐츠, 소셜미디어 숏폼 동영상. 모두 사내에서 기획·촬영·편집까지 완결합니다. 긴자의 명점이 새 웹사이트용 히어로 영상을 필요로 할 때, 웹 제작사와 영상 제작사를 따로 조율하고 일관성을 기도할 필요가 없습니다. KAIRO는 영어와 일본어로, 한 지붕 아래에서 모든 것을 완결합니다. 도쿄 디자인 시장에서, 이것은 진정으로 희소합니다.</p>
         <blockquote style="border-left:2px solid var(--warm);padding-left:1.6rem;margin:1.8rem 0 0;font-family:var(--f-d);font-style:italic;font-size:1rem;color:var(--ink);line-height:1.75" class="ko">
           "We don't translate words. We translate culture."<br>
           <span style="font-style:normal;font-size:.75rem;font-family:var(--f-u);letter-spacing:.2em;color:var(--ink-light)">— Albert Junior, Founder, KAIRO</span>
@@ -3222,56 +3225,36 @@ document.querySelectorAll('.fsub').forEach(btn => {
 })();
 </script>
 
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script>
 (function() {
   var ids = [305311222, 305313129, 377450847, 396397429, 486222916, 657690215];
   var current = 0;
   var cover = document.querySelector('.hero-cover');
+  var player = new Vimeo.Player(document.getElementById('hero-iframe'));
   var transitioning = false;
   var triggered = false;
 
-  function initPlayer() {
-    var iframe = document.getElementById('hero-iframe');
-    if (!iframe || typeof Vimeo === 'undefined') {
-      setTimeout(initPlayer, 100);
-      return;
-    }
-
-    var player = new Vimeo.Player(iframe);
-
-    /* モバイル含め確実に再生 */
-    player.ready().then(function() {
-      player.setVolume(0);
-      player.play().catch(function() {});
-    });
-
-    player.on('play', function() {
+  player.on('play', function() {
+    if (!transitioning) {
       cover.style.opacity = '0';
+    } else {
       transitioning = false;
       triggered = false;
-    });
+      cover.style.opacity = '0';
+    }
+  });
 
-    player.on('timeupdate', function(data) {
-      if (triggered || transitioning || !data.duration) return;
-      /* 動画終了1秒前にカバーを出し次の動画をロード */
-      if ((data.duration - data.seconds) <= 1) {
-        triggered = true;
-        transitioning = true;
-        cover.style.opacity = '1';
-        current = (current + 1) % ids.length;
-        player.loadVideo(ids[current]).then(function() {
-          player.setVolume(0);
-          player.play().catch(function() {});
-        });
-      }
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPlayer);
-  } else {
-    initPlayer();
-  }
+  player.on('timeupdate', function(data) {
+    if (triggered || transitioning) return;
+    if (data.duration > 0 && (data.duration - data.seconds) <= 1) {
+      triggered = true;
+      transitioning = true;
+      cover.style.opacity = '1';
+      current = (current + 1) % ids.length;
+      player.loadVideo(ids[current]);
+    }
+  });
 })();
 </script>
 
