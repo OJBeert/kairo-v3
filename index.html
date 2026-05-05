@@ -3239,11 +3239,11 @@ document.querySelectorAll('.fsub').forEach(btn => {
   function startVideo() {
     player.setVolume(0);
     player.play().catch(function() {
-      // モバイル: 最初のスクロールで再生開始
-      window.addEventListener('scroll', function onScroll() {
+      // モバイルで自動再生がブロックされた場合、最初のタッチで再生
+      document.addEventListener('touchstart', function onTouch() {
         player.play();
-        window.removeEventListener('scroll', onScroll);
-      }, { once: true, passive: true });
+        document.removeEventListener('touchstart', onTouch);
+      }, { once: true });
     });
   }
 
