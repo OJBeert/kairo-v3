@@ -141,35 +141,54 @@
   transition: background var(--t1);
 }
 .plan-row:first-child { border-top: 1px solid var(--stone-lt); }
-.plan-row:hover { background: rgba(242,237,228,.6); }
+.plan-row:hover { background: var(--cream-mid); }
 .plan-row.plan-row-feat {
-  background: var(--cream-mid);
   position: relative;
 }
 .plan-row.plan-row-feat::before {
   content: ''; position: absolute; left: 0; top: 0; bottom: 0;
   width: 2px; background: var(--warm);
 }
+.plan-row-feat .plan-row-label { padding-left: 3.4rem; }
 .plan-row-label {
   padding: 2.8rem 2.2rem 2.8rem 3rem;
   border-right: 1px solid var(--stone-lt);
   display: flex; flex-direction: column; justify-content: center;
-}
-.plan-row-feat .plan-row-label { padding-left: 3.4rem; }
-.plan-row-name {
-  font-family: var(--f-u); font-size: 9px; font-weight: 300;
-  letter-spacing: .34em; text-transform: uppercase; color: var(--ink-light);
-  display: block; margin-bottom: 1rem;
+  transition: background 0.25s ease;
 }
 .plan-row-price {
   font-family: var(--f-d); font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 300; letter-spacing: -.04em; line-height: 1;
   color: var(--ink);
+  transition: color 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-block;
 }
-.plan-row-feat .plan-row-price { color: var(--warm); }
+.plan-row-name {
+  font-family: var(--f-u); font-size: 9px; font-weight: 300;
+  letter-spacing: .34em; text-transform: uppercase; color: var(--ink-light);
+  display: block; margin-bottom: 1rem;
+  transition: color 0.25s ease, letter-spacing 0.25s ease;
+}
 .plan-row-per {
   font-family: var(--f-u); font-size: 9px; font-weight: 300;
   letter-spacing: .14em; color: var(--ink-ghost); margin-top: .4rem;
+  transition: color 0.25s ease;
+}
+.plan-row:hover .plan-row-name {
+  color: var(--warm);
+  letter-spacing: .42em;
+}
+.plan-row:hover .plan-row-price {
+  color: var(--warm);
+  transform: translateY(-3px) scale(1.04);
+}
+.plan-row:hover .plan-row-per {
+  color: var(--ink-light);
+}
+.plan-row-feat .plan-row-price { color: var(--warm); }
+.plan-row-feat:hover .plan-row-price {
+  transform: translateY(-3px) scale(1.06);
+  filter: brightness(1.15);
 }
 .plan-row-body {
   padding: 2.8rem 3rem;
@@ -219,6 +238,90 @@
   .cases-grid.cases-grid-v2 .case-card:nth-child(3) {
     grid-column: 1; grid-row: auto;
   }
+}
+
+/* ── Pilot offer banner ── */
+.pilot {
+  background: var(--cream-mid);
+  border-top: 1px solid var(--stone-lt);
+  border-bottom: 1px solid var(--stone-lt);
+  padding: 4rem 3rem;
+}
+.pilot-in {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3px 1fr;
+  gap: 0 3rem;
+  align-items: start;
+}
+.pilot-bar {
+  width: 3px;
+  height: 100%;
+  background: var(--warm);
+  border-radius: 2px;
+  align-self: stretch;
+}
+.pilot-sup {
+  font-family: var(--f-u);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  color: var(--warm);
+  display: block;
+  margin-bottom: 1rem;
+}
+.pilot-h {
+  font-family: var(--f-d);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 300;
+  letter-spacing: -.03em;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 1.4rem;
+}
+.pilot-h em { font-style: italic; color: var(--warm); }
+.pilot-p {
+  font-family: var(--f-js);
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 2.2;
+  letter-spacing: .08em;
+  color: var(--ink-mid);
+  margin-bottom: 1.8rem;
+}
+.pilot-p.en {
+  font-family: var(--f-u);
+  letter-spacing: .02em;
+}
+.pilot-slots {
+  display: flex;
+  gap: .6rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.pilot-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--warm);
+  flex-shrink: 0;
+}
+.pilot-dot.empty {
+  background: transparent;
+  border: 1px solid var(--stone-lt);
+}
+.pilot-slot-label {
+  font-family: var(--f-u);
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: .22em;
+  color: var(--ink-light);
+  margin-left: .4rem;
+}
+@media (max-width: 640px) {
+  .pilot { padding: 3rem 1.6rem; }
+  .pilot-in { grid-template-columns: 2px 1fr; gap: 0 1.6rem; }
 }
 
 /* ── Stats: monospace number treatment ── */
@@ -2133,12 +2236,16 @@ footer {
         <em>그 고민과 함께, 저는 30년간 이 현장에 있었습니다.</em>
       </p>
     </div>
+    <div class="rv d3" style="margin-bottom:1.6rem">
+      <p class="ja" style="font-family:var(--f-js);font-size:13px;font-weight:200;letter-spacing:.12em;color:var(--ink-light);line-height:2;margin-bottom:1.8rem">富裕層の客単価が¥30,000なら、月10組増えれば<strong style="color:var(--ink);font-weight:300">初月で元が取れます</strong>。</p>
+      <p class="en" style="font-family:var(--f-u);font-size:12px;font-weight:300;letter-spacing:.08em;color:var(--ink-light);line-height:2;margin-bottom:1.8rem">At ¥30,000 avg. spend, 10 new groups/month covers the full investment in month one.</p>
+    </div>
     <div class="rv d3">
-      <a href="#presence" class="tcta">
-        <span class="en">See how we solve this</span>
-        <span class="ja">解決策を見る</span>
-        <span class="zh">了解解決方案</span>
-        <span class="ko">해결 방법 보기</span>
+      <a href="#enquire" class="tcta">
+        <span class="en">Book a free 30-min assessment</span>
+        <span class="ja">無料相談を予約する（30分）</span>
+        <span class="zh">預約免費30分鐘診斷</span>
+        <span class="ko">무료 30분 진단 예약하기</span>
         <svg width="22" height="8" viewBox="0 0 22 8" fill="none" aria-hidden="true">
           <path d="M0 4h20M16 1l5 3-5 3" stroke="currentColor" stroke-width=".85"/>
         </svg>
@@ -2223,6 +2330,49 @@ footer {
         <span class="ja">まず現状診断（30分・無料）</span>
         <span class="zh">先進行免費30分鐘現況診斷</span>
         <span class="ko">먼저 무료 30분 현황 진단받기</span>
+        <svg width="22" height="8" viewBox="0 0 22 8" fill="none" aria-hidden="true">
+          <path d="M0 4h20M16 1l5 3-5 3" stroke="currentColor" stroke-width=".85"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PILOT OFFER ════ -->
+<section class="pilot" aria-labelledby="pilot-h">
+  <div class="pilot-in rv">
+    <div class="pilot-bar" aria-hidden="true"></div>
+    <div>
+      <span class="pilot-sup ja">初期モニター募集中</span>
+      <span class="pilot-sup en">Founding client programme</span>
+      <span class="pilot-sup zh">創始客戶計畫</span>
+      <span class="pilot-sup ko">창립 클라이언트 프로그램</span>
+
+      <p class="pilot-h ja" id="pilot-h">KAIROの実績をつくる<em>最初の3社</em>を探しています。</p>
+      <p class="pilot-h en" id="pilot-h-en">Looking for <em>three founding clients</em><br>to build our track record together.</p>
+      <p class="pilot-h zh">尋找<em>首批三家店舖</em>，<br>共同建立KAIRO的成功案例。</p>
+      <p class="pilot-h ko"><em>첫 3곳</em>의 파운딩 클라이언트를<br>함께 찾고 있습니다.</p>
+
+      <p class="pilot-p ja">KAIROはスタートアップです。実績を正直にお伝えします。<br>その代わり、あなたの店舗での成果をKAIROのケーススタディとして公開させていただく許諾をいただけるなら、<strong style="font-weight:300;color:var(--ink)">スタンダードプランをモニター価格でご提供します</strong>。<br>導入後の変化を一緒に記録し、次のオーナーへの証明にします。</p>
+      <p class="pilot-p en">KAIRO is new. We'll be honest about that.<br>In exchange for permission to document and publish the results from your establishment as a case study, we're offering the Standard plan at a <strong style="font-weight:300;color:var(--ink)">founding client rate</strong>.<br>Three spots. No renewals after the cohort is full.</p>
+      <p class="pilot-p zh">KAIRO是新創服務，我們對此坦誠。若您願意授權我們將貴店的成果作為案例公開，我們將以<strong style="font-weight:300;color:var(--ink)">創始客戶特別價格</strong>提供標準方案。限三個名額，額滿即止。</p>
+      <p class="pilot-p ko">KAIRO는 신생 서비스입니다. 솔직하게 말씀드립니다.<br>귀사의 성과를 케이스 스터디로 공개하는 것을 허락해주신다면, 스탠다드 플랜을 <strong style="font-weight:300;color:var(--ink)">창립 클라이언트 가격</strong>으로 제공합니다.<br>3곳 한정, 모집 완료 시 종료됩니다.</p>
+
+      <div class="pilot-slots" aria-label="残り枠">
+        <div class="pilot-dot" title="空き枠"></div>
+        <div class="pilot-dot empty" title="未確定"></div>
+        <div class="pilot-dot empty" title="未確定"></div>
+        <span class="pilot-slot-label ja">3枠限定</span>
+        <span class="pilot-slot-label en">3 spots available</span>
+        <span class="pilot-slot-label zh">限3名額</span>
+        <span class="pilot-slot-label ko">3곳 한정</span>
+      </div>
+
+      <a href="#enquire" class="tcta">
+        <span class="ja">モニター枠に応募する</span>
+        <span class="en">Apply for a founding client spot</span>
+        <span class="zh">申請創始客戶名額</span>
+        <span class="ko">창립 클라이언트 신청</span>
         <svg width="22" height="8" viewBox="0 0 22 8" fill="none" aria-hidden="true">
           <path d="M0 4h20M16 1l5 3-5 3" stroke="currentColor" stroke-width=".85"/>
         </svg>
@@ -2745,8 +2895,6 @@ footer {
       <span class="sup ja">無料相談</span>
       <span class="sup zh">免費諮詢</span>
       <span class="sup ko">무료 상담</span>
-      <span class="sup zh">免費諮詢</span>
-      <span class="sup ko">무료 상담</span>
       <h2 id="enq-h" class="enq-h2 en">In 30 minutes, we'll identify<br>the three things keeping<br><em>international guests away.</em></h2>
       <p class="enq-jp-h2 ja">30分で、「いま外国人客があなたの店を<br>通り過ぎている3つの理由」を<br><em>お伝えします</em>。</p>
       <h2 class="enq-h2 zh">30分鐘內，找出讓<br>外國客人<em>離開的3個原因</em>。</h2>
@@ -2775,13 +2923,14 @@ footer {
           <input class="fi" id="f-em" type="email" name="email" required placeholder="name@email.com" autocomplete="email">
         </div>
         <div class="fg">
-          <label class="fl" for="f-tl"><span class="en">Phone / WhatsApp</span><span class="ja">電話 / WhatsApp</span><span class="zh">電話 / WhatsApp</span><span class="ko">전화 / WhatsApp</span></label>
+          <label class="fl" for="f-tl"><span class="en">Phone / WhatsApp / LINE</span><span class="ja">電話 / WhatsApp / LINE</span><span class="zh">電話 / WhatsApp / LINE</span><span class="ko">전화 / WhatsApp / LINE</span></label>
           <input class="fi" id="f-tl" type="tel" name="phone" placeholder="+81-XX-XXXX-XXXX" autocomplete="tel">
         </div>
         <div class="fg full">
           <label class="fl" for="f-sv"><span class="en">Interest</span><span class="ja">ご相談内容</span><span class="zh">諮詢內容</span><span class="ko">상담 내용</span></label>
           <select class="fsel" id="f-sv" name="service">
             <option value="">—</option>
+            <option value="pilot">初期モニター枠に応募 / Founding client spot</option>
             <option value="standard">Standard — ¥300,000</option>
             <option value="premium">Premium — ¥500,000</option>
             <option value="monthly">Monthly Support — ¥50,000/月</option>
@@ -2806,8 +2955,8 @@ footer {
       <p class="ja">3営業日以内にご連絡いたします。</p>
     </div>
     <p class="enq-alt rv">
-      <span class="en">Or write directly to <a href="mailto:savannatokyo@gmail.com">Email</a> &nbsp;·&nbsp; <a href="https://wa.me/818034411985">WhatsApp</a></span>
-      <span class="ja">直接のご連絡は <a href="mailto:savannatokyo@gmail.com">Email</a> &nbsp;·&nbsp; <a href="https://wa.me/818034411985">WhatsApp</a></span>
+      <span class="en">Or contact directly: <a href="mailto:savannatokyo@gmail.com">Email</a> &nbsp;·&nbsp; <a href="tel:+818034411985">Phone</a> &nbsp;·&nbsp; <a href="https://wa.me/818034411985">WhatsApp</a> &nbsp;·&nbsp; <a href="https://line.me/ti/p/@283irnxs" rel="noopener">LINE</a></span>
+      <span class="ja">直接のご連絡は <a href="mailto:savannatokyo@gmail.com">Email</a> &nbsp;·&nbsp; <a href="tel:+818034411985">電話</a> &nbsp;·&nbsp; <a href="https://wa.me/818034411985">WhatsApp</a> &nbsp;·&nbsp; <a href="https://line.me/ti/p/@283irnxs" rel="noopener">LINE</a></span>
     </p>
   </div>
 </section>
@@ -2844,7 +2993,9 @@ footer {
           <ul class="ft-ls">
             <li><a href="#enquire"><span class="en">Free Consultation</span><span class="ja jp-a">無料相談</span><span class="zh jp-a">免費諮詢</span><span class="ko jp-a">무료 상담</span></a></li>
             <li><a href="mailto:savannatokyo@gmail.com">Email</a></li>
+            <li><a href="tel:+818034411985"><span class="en">Phone</span><span class="ja jp-a">電話</span><span class="zh jp-a">電話</span><span class="ko jp-a">전화</span></a></li>
             <li><a href="https://wa.me/818034411985">WhatsApp</a></li>
+            <li><a href="https://line.me/ti/p/@283irnxs" rel="noopener">LINE</a></li>
           </ul>
         </nav>
       </div>
