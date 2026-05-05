@@ -36,8 +36,8 @@
 <meta name="twitter:image" content="https://kairowebdesign.pages.dev/assets/img/ogp-image.jpg">
 
 <!-- Favicon — logo here only, never on page body -->
-<link rel="icon" type="image/png" href="/assets/img/favicon.png">
-<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/jpeg" href="/assets/img/favicon.jpg">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.jpg">
 
 <!-- JSON-LD -->
 <script type="application/ld+json">
@@ -61,13 +61,6 @@
      --photo-2 → /assets/img/service-trust.webp     (Trust section)
      推奨サイズ: 1200×900px WebP
 ══════════════════════════════════════ -->
-<style>
-:root {
-  --photo-1: url("/assets/img/service-presence.webp");
-  --photo-2: url("/assets/img/service-trust.webp");
-}
-</style>
-
 <!-- TASTE-SKILL ENHANCEMENTS -->
 <style>
 /* ── Scroll Progress Bar ── */
@@ -119,16 +112,16 @@
 
 /* ── Spotlight border on CTA hover ── */
 .tcta {
-  position: relative; overflow: hidden;
+  position: relative;
 }
-.tcta::after {
+.tcta::before {
   content: '';
   position: absolute; inset: 0;
   background: radial-gradient(ellipse at var(--mx, 50%) var(--my, 50%), rgba(160,136,96,.18) 0%, transparent 70%);
   opacity: 0; transition: opacity 0.3s;
   pointer-events: none;
 }
-.tcta:hover::after { opacity: 1; }
+.tcta:hover::before { opacity: 1; }
 
 /* ── Pricing: stacked asymmetric rows (replaces 3-col cards) ── */
 .plans-v2 {
@@ -208,36 +201,6 @@
   .plan-row-label, .plan-row-body, .plan-row-cta { border: none; padding: 1.6rem 1.8rem; }
   .plan-row-body .plan-list { grid-template-columns: 1fr; }
   .plan-row.plan-row-feat::before { top: 0; left: 0; right: 0; bottom: auto; width: auto; height: 2px; }
-}
-
-/* ── Cases: 2+1 asymmetric layout ── */
-/* Use .cases-grid.cases-grid-v2 for higher specificity than .cases-grid alone */
-.cases-grid.cases-grid-v2 {
-  max-width: 1200px; margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 1px; background: var(--stone-lt);
-}
-.cases-grid.cases-grid-v2 .case-card:nth-child(1) {
-  grid-column: 1; grid-row: 1;
-}
-.cases-grid.cases-grid-v2 .case-card:nth-child(2) {
-  grid-column: 2; grid-row: 1 / 3;
-}
-.cases-grid.cases-grid-v2 .case-card:nth-child(3) {
-  grid-column: 1; grid-row: 2;
-}
-.cases-grid.cases-grid-v2 .case-card-cta {
-  grid-column: 1 / -1;
-}
-@media (max-width: 960px) {
-  .cases-grid.cases-grid-v2 { grid-template-columns: 1fr; }
-  .cases-grid.cases-grid-v2 .case-card:nth-child(1),
-  .cases-grid.cases-grid-v2 .case-card:nth-child(2),
-  .cases-grid.cases-grid-v2 .case-card:nth-child(3) {
-    grid-column: 1; grid-row: auto;
-  }
 }
 
 /* ── Pilot offer banner ── */
@@ -604,7 +567,6 @@ img { display: block; max-width: 100%; }
     margin-right: 0;
     aspect-ratio: 4 / 3;
     min-height: 280px;
-    background-position: center center;
   }
 
 }
@@ -1103,6 +1065,7 @@ footer {
 }
 @media (max-width: 600px) {
   #nav { padding: 0 1.2rem; height: 52px; }
+  #main-content { padding-top: 52px; }
   .nav-word { font-size: 17px; letter-spacing: .5em; }
   .menu-label { display: none; }
   .nav-right { gap: 1rem; }
@@ -1126,679 +1089,7 @@ footer {
   .plan-row-body,
   .plan-row-cta { padding-left: 1.4rem; padding-right: 1.4rem; }
   .plan-row-feat .plan-row-label { padding-left: 1.8rem; }
-  /* Cases card */
-  .case-card { padding: 2rem 1.4rem; }
 }
-
-
-
-/* ═══════════════════════════════════════
-   CASE STUDIES — Added section
-   Same design language, no existing CSS changed
-═══════════════════════════════════════ */
-#cases {
-  background: var(--cream-mid);
-  padding: 9rem 2rem;
-}
-.cases-hd {
-  max-width: 680px; margin: 0 auto; text-align: center; margin-bottom: 7rem;
-}
-.cases-hd .sup { margin-bottom: 1.6rem; }
-.cases-hd h2 {
-  font-family: var(--f-d);
-  font-size: clamp(2.4rem, 4.2vw, 4rem);
-  font-weight: 300; line-height: 1.08; letter-spacing: -.015em;
-  color: var(--ink); margin-bottom: 1.4rem;
-}
-.cases-hd h2 em { font-style: italic; }
-.cases-hd .jp-h2 {
-  font-family: var(--f-js);
-  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
-  font-weight: 200; line-height: 1.45; letter-spacing: .065em;
-  color: var(--ink); margin-bottom: 1.4rem;
-}
-.cases-hd p {
-  font-family: var(--f-u); font-size: 16px; font-weight: 300;
-  line-height: 2; letter-spacing: .02em; color: var(--ink-mid);
-}
-.cases-hd .jp-p {
-  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
-  line-height: 2.2; letter-spacing: .06em; color: var(--ink-mid);
-}
-.cases-grid {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1px; background: var(--stone-lt);
-  margin-bottom: 2px;
-}
-.case-card {
-  background: var(--cream-mid);
-  padding: 3.8rem 3rem;
-  position: relative;
-  transition: background var(--t1);
-  display: flex; flex-direction: column;
-}
-.case-card:hover { background: var(--cream); }
-.case-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 1px; background: var(--stone-lt);
-  transition: background var(--t1);
-}
-.case-card:hover::before { background: var(--warm); }
-.case-num {
-  font-family: var(--f-u); font-size: 9px; font-weight: 300;
-  letter-spacing: .32em; text-transform: uppercase;
-  color: var(--ink-ghost); display: block; margin-bottom: 2rem;
-}
-.case-cat {
-  font-family: var(--f-u); font-size: 9.5px; font-weight: 300;
-  letter-spacing: .28em; text-transform: uppercase;
-  color: var(--warm); display: block; margin-bottom: 1rem;
-}
-.case-type {
-  font-family: var(--f-d);
-  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
-  font-weight: 300; line-height: 1.18; letter-spacing: -.01em;
-  color: var(--ink); margin-bottom: .4rem;
-}
-.case-type em { font-style: italic; }
-.case-jp-type {
-  font-family: var(--f-js);
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  font-weight: 200; line-height: 1.45; letter-spacing: .055em;
-  color: var(--ink); margin-bottom: 2rem;
-}
-.case-rule { height: 1px; background: var(--stone-lt); margin-bottom: 2rem; }
-.case-label {
-  font-family: var(--f-u); font-size: 9px; font-weight: 300;
-  letter-spacing: .28em; text-transform: uppercase;
-  color: var(--ink-light); display: block; margin-bottom: .7rem;
-}
-.case-body {
-  font-family: var(--f-u); font-size: 13px; font-weight: 300;
-  line-height: 1.8; letter-spacing: .02em;
-  color: var(--ink-mid); margin-bottom: 1.8rem;
-}
-.case-jp-body {
-  font-family: var(--f-ju); font-size: 13px; font-weight: 200;
-  line-height: 2; letter-spacing: .06em;
-  color: var(--ink-mid); margin-bottom: 1.8rem;
-}
-.case-outcome {
-  margin-top: auto;
-  padding: 1.6rem 1.8rem;
-  background: var(--cream-deep);
-  border-left: 2px solid var(--warm);
-}
-.case-out-num {
-  font-family: var(--f-d);
-  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-  font-weight: 300; letter-spacing: -.03em; line-height: 1;
-  color: var(--warm); margin-bottom: .35rem;
-}
-.case-out-desc {
-  font-family: var(--f-u); font-size: 11.5px; font-weight: 300;
-  letter-spacing: .04em; color: var(--ink-mid); line-height: 1.65;
-}
-.case-out-jp {
-  font-family: var(--f-ju); font-size: 11.5px; font-weight: 200;
-  letter-spacing: .09em; color: var(--ink-mid); line-height: 1.85;
-}
-.cases-note {
-  max-width: 1200px; margin: 0 auto;
-  padding: 2.2rem 3rem;
-  border: 1px solid var(--stone-lt);
-  background: var(--cream);
-  display: flex; align-items: center; gap: 1.4rem;
-}
-.cases-note-mark { color: var(--warm); font-size: .85rem; flex-shrink: 0; }
-.cases-note-txt {
-  font-family: var(--f-u); font-size: 11.5px; font-weight: 300;
-  line-height: 1.8; letter-spacing: .025em; color: var(--ink-mid);
-}
-.cases-note-jp {
-  font-family: var(--f-ju); font-size: 11.5px; font-weight: 200;
-  line-height: 2; letter-spacing: .06em; color: var(--ink-mid);
-}
-@media (max-width: 960px) {
-  .cases-grid { grid-template-columns: 1fr; }
-}
-
-
-/* ═══════════════════════════════════════════════
-   CASE STUDIES — Browser Mockup Section
-   Single browser frame per card — Typza style
-   Clean, editorial, full-bleed screenshot
-═══════════════════════════════════════════════ */
-#cases {
-  background: var(--cream-mid);
-  padding: 9rem 2rem;
-}
-.cases-hd {
-  max-width: 680px; margin: 0 auto; text-align: center; margin-bottom: 6rem;
-}
-.cases-hd .sup { margin-bottom: 1.6rem; }
-.cases-hd h2 {
-  font-family: var(--f-d);
-  font-size: clamp(2.4rem, 4.2vw, 4rem);
-  font-weight: 300; line-height: 1.08; letter-spacing: -.015em;
-  color: var(--ink); margin-bottom: 1.4rem;
-}
-.cases-hd h2 em { font-style: italic; }
-.cases-hd .jp-h2 {
-  font-family: var(--f-js);
-  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
-  font-weight: 200; line-height: 1.45; letter-spacing: .065em;
-  color: var(--ink); margin-bottom: 1.4rem;
-}
-.cases-hd p {
-  font-family: var(--f-u); font-size: 16px; font-weight: 300;
-  line-height: 2; letter-spacing: .02em; color: var(--ink-mid);
-}
-.cases-hd .jp-p {
-  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
-  line-height: 2.2; letter-spacing: .06em; color: var(--ink-mid);
-}
-
-/* ── Cards grid ── */
-.cases-grid {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1px; background: var(--stone-lt);
-  margin-bottom: 2px;
-}
-.case-card {
-  background: var(--cream-mid);
-  position: relative;
-  transition: background var(--t1);
-  display: flex; flex-direction: column;
-}
-.case-card:hover { background: var(--cream); }
-
-/* Top accent rule — animates on hover */
-.case-card-top-rule {
-  height: 1px; background: var(--stone-lt);
-  flex-shrink: 0;
-  transition: background var(--t1);
-}
-.case-card:hover .case-card-top-rule { background: var(--warm); }
-
-/* ── Browser Mockup — Typza style ──
-   Single full-width browser chrome + screenshot
-   Clean Mac-style chrome, editorial
-*/
-.case-mockup {
-  position: relative;
-  margin: 2rem 2rem 0;
-  border-radius: 8px;
-  overflow: hidden;
-  height: auto;
-  box-shadow:
-    0 2px 8px rgba(44,41,37,.08),
-    0 8px 32px rgba(44,41,37,.1),
-    0 20px 60px rgba(44,41,37,.08);
-  flex-shrink: 0;
-  background: var(--cream-deep);
-  transition: box-shadow var(--t2), transform var(--t2);
-}
-.case-card:hover .case-mockup {
-  box-shadow:
-    0 4px 12px rgba(44,41,37,.1),
-    0 12px 40px rgba(44,41,37,.14),
-    0 28px 80px rgba(44,41,37,.1);
-  transform: translateY(-2px);
-}
-
-/* Browser chrome bar */
-.mock-chrome {
-  height: 32px;
-  background: var(--cream-deep);
-  border-bottom: 1px solid var(--stone-lt);
-  display: flex;
-  align-items: center;
-  padding: 0 12px;
-  gap: 8px;
-  flex-shrink: 0;
-}
-/* Mac traffic lights */
-.mock-dots {
-  display: flex; align-items: center; gap: 5px;
-}
-.mock-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--stone-lt);
-  flex-shrink: 0;
-}
-/* URL bar */
-.mock-url {
-  flex: 1;
-  height: 16px;
-  background: var(--stone-lt);
-  border-radius: 3px;
-  margin: 0 8px;
-  position: relative;
-  overflow: hidden;
-}
-.mock-url::after {
-  content: '';
-  position: absolute; top: 50%; left: 8px;
-  transform: translateY(-50%);
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--stone);
-}
-
-/* Screenshot area — full image, no cropping */
-.mock-screen {
-  width: 100%;
-  overflow: hidden;
-  display: block;
-  position: relative;
-}
-.mock-screen img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 1.4s var(--ease);
-}
-.case-card:hover .mock-screen img {
-  transform: scale(1.02);
-}
-
-/* ── Card text body ── */
-.case-body-wrap {
-  padding: 2.6rem 2.8rem 2.8rem;
-  display: flex; flex-direction: column; flex: 1;
-}
-.case-num {
-  font-family: var(--f-u); font-size: 9px; font-weight: 300;
-  letter-spacing: .32em; text-transform: uppercase;
-  color: var(--ink-ghost); display: block; margin-bottom: 1.4rem;
-}
-.case-cat {
-  font-family: var(--f-u); font-size: 9.5px; font-weight: 300;
-  letter-spacing: .28em; text-transform: uppercase;
-  color: var(--warm); display: block; margin-bottom: .8rem;
-}
-.case-type {
-  font-family: var(--f-d);
-  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
-  font-weight: 300; line-height: 1.18; letter-spacing: -.01em;
-  color: var(--ink); margin-bottom: .3rem;
-}
-.case-type em { font-style: italic; }
-.case-jp-type {
-  font-family: var(--f-js);
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  font-weight: 200; line-height: 1.45; letter-spacing: .055em;
-  color: var(--ink); margin-bottom: 1.6rem;
-}
-.case-rule { height: 1px; background: var(--stone-lt); margin-bottom: 1.6rem; }
-.case-label {
-  font-family: var(--f-u); font-size: 9px; font-weight: 300;
-  letter-spacing: .28em; text-transform: uppercase;
-  color: var(--ink-light); display: block; margin-bottom: .6rem;
-}
-.case-body {
-  font-family: var(--f-u); font-size: 13px; font-weight: 300;
-  line-height: 1.8; letter-spacing: .02em;
-  color: var(--ink-mid); margin-bottom: 1.4rem;
-}
-.case-jp-body {
-  font-family: var(--f-ju); font-size: 13px; font-weight: 200;
-  line-height: 2; letter-spacing: .06em;
-  color: var(--ink-mid); margin-bottom: 1.4rem;
-}
-/* Solution tags */
-.case-tags {
-  display: flex; flex-wrap: wrap; gap: .45rem; margin-bottom: 1.6rem;
-}
-.case-tag {
-  font-family: var(--f-u); font-size: 9px; font-weight: 300;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--ink-mid);
-  border: 1px solid var(--stone-lt);
-  padding: .3rem .7rem;
-  transition: border-color var(--t1), color var(--t1);
-}
-.case-card:hover .case-tag {
-  border-color: var(--stone);
-}
-
-/* Outcome bar */
-.case-outcome {
-  margin-top: auto;
-  padding: 1.4rem 1.6rem;
-  background: var(--cream-deep);
-  border-left: 2px solid var(--warm);
-}
-.case-out-num {
-  font-family: var(--f-d);
-  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-  font-weight: 300; letter-spacing: -.03em; line-height: 1;
-  color: var(--warm); margin-bottom: .3rem;
-}
-.case-out-desc {
-  font-family: var(--f-u); font-size: 12px; font-weight: 300;
-  letter-spacing: .04em; color: var(--ink-mid); line-height: 1.65;
-}
-.case-out-jp {
-  font-family: var(--f-ju); font-size: 12px; font-weight: 200;
-  letter-spacing: .09em; color: var(--ink-mid); line-height: 1.85;
-}
-
-/* Disclaimer */
-.cases-note {
-  max-width: 1200px; margin: 0 auto;
-  padding: 2.2rem 3rem;
-  border: 1px solid var(--stone-lt);
-  background: var(--cream);
-  display: flex; align-items: center; gap: 1.4rem;
-}
-.cases-note-mark { color: var(--warm); font-size: .85rem; flex-shrink: 0; }
-.cases-note-txt {
-  font-family: var(--f-u); font-size: 11.5px; font-weight: 300;
-  line-height: 1.8; letter-spacing: .025em; color: var(--ink-mid);
-}
-.cases-note-jp {
-  font-family: var(--f-ju); font-size: 11.5px; font-weight: 200;
-  line-height: 2; letter-spacing: .06em; color: var(--ink-mid);
-}
-
-@media (max-width: 960px) {
-  .cases-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 600px) {
-  .case-body-wrap { padding: 2rem 1.8rem; }
-  .case-mockup { margin: 1.6rem 1.6rem 0; }
-}
-.cases-hd {
-  max-width: 680px; margin: 0 auto; text-align: center; margin-bottom: 6rem;
-}
-.cases-hd .sup { margin-bottom: 1.6rem; }
-.cases-hd h2 {
-  font-family: var(--f-d);
-  font-size: clamp(2.4rem, 4.2vw, 4rem);
-  font-weight: 300; line-height: 1.08; letter-spacing: -.015em;
-  color: var(--ink); margin-bottom: 1.4rem;
-}
-.cases-hd h2 em { font-style: italic; }
-.cases-hd .jp-h2 {
-  font-family: var(--f-js);
-  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
-  font-weight: 200; line-height: 1.45; letter-spacing: .065em;
-  color: var(--ink); margin-bottom: 1.4rem;
-}
-.cases-hd p {
-  font-family: var(--f-u); font-size: 16px; font-weight: 300;
-  line-height: 2; letter-spacing: .02em; color: var(--ink-mid);
-}
-.cases-hd .jp-p {
-  font-family: var(--f-ju); font-size: 16px; font-weight: 200;
-  line-height: 2.2; letter-spacing: .06em; color: var(--ink-mid);
-}
-
-/* ── Case cards ── */
-.cases-grid {
-  max-width: 1200px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1px; background: var(--stone-lt);
-  margin-bottom: 2px;
-}
-.case-card {
-  background: var(--cream-mid);
-  padding: 0;
-  position: relative;
-  transition: background var(--t1);
-  display: flex; flex-direction: column;
-}
-.case-card:hover { background: var(--cream); }
-.case-card-top-rule {
-  height: 1px; background: var(--stone-lt);
-  transition: background var(--t1);
-}
-.case-card:hover .case-card-top-rule { background: var(--warm); }
-
-/* Device mockup container */
-.case-mockup {
-  position: relative;
-  height: auto;
-  background: var(--cream-deep);
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-/* Laptop frame */
-.mock-laptop {
-  position: absolute;
-  bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 220px;
-}
-.mock-laptop-body {
-  width: 100%;
-  background: var(--ink);
-  border-radius: 6px 6px 0 0;
-  padding: 8px 8px 0;
-  box-shadow: 0 -4px 24px rgba(44,41,37,.18);
-}
-.mock-laptop-screen {
-  width: 100%;
-  aspect-ratio: 16/10;
-  border-radius: 3px;
-  overflow: hidden;
-  background: var(--cream);
-}
-.mock-laptop-base {
-  width: 120%;
-  margin-left: -10%;
-  height: 7px;
-  background: var(--ink-mid);
-  border-radius: 0 0 4px 4px;
-}
-.mock-laptop-notch {
-  width: 30%;
-  height: 5px;
-  background: var(--ink-light);
-  margin: 0 auto;
-  border-radius: 0 0 4px 4px;
-}
-
-/* Phone frame */
-.mock-phone {
-  position: absolute;
-  bottom: 12px;
-  width: 72px;
-}
-.mock-phone.left  { left: calc(50% - 130px); }
-.mock-phone.right { left: calc(50% + 60px); }
-.mock-phone-body {
-  width: 100%;
-  background: var(--ink);
-  border-radius: 10px;
-  padding: 6px 4px 8px;
-  box-shadow: 0 4px 20px rgba(44,41,37,.2);
-}
-.mock-phone-screen {
-  width: 100%;
-  aspect-ratio: 9/16;
-  border-radius: 6px;
-  overflow: hidden;
-  background: var(--cream);
-}
-.mock-phone-home {
-  width: 24px; height: 3px;
-  background: var(--ink-mid);
-  border-radius: 2px;
-  margin: 4px auto 0;
-}
-.mock-phone.right .mock-phone-body {
-  transform: rotate(3deg);
-}
-.mock-phone.left .mock-phone-body {
-  transform: rotate(-3deg);
-}
-
-/* Screen content fills */
-.mock-screen-fill {
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column;
-  gap: 0;
-}
-.mock-screen-hero {
-  flex-shrink: 0;
-  background: var(--ink);
-  height: 38%;
-  position: relative;
-  overflow: hidden;
-}
-.mock-screen-hero-bar {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 4px 6px;
-  background: linear-gradient(to top, rgba(44,41,37,.7), transparent);
-}
-.mock-screen-hero-txt {
-  font-family: var(--f-u); font-size: 4px; font-weight: 300;
-  letter-spacing: .12em; text-transform: uppercase; color: rgba(242,237,228,.8);
-}
-.mock-screen-body {
-  flex: 1;
-  padding: 5px 6px;
-  display: flex; flex-direction: column; gap: 3px;
-}
-.mock-line {
-  height: 2px; background: var(--stone-lt); border-radius: 1px;
-}
-.mock-line.w-full { width: 100%; }
-.mock-line.w-80   { width: 80%; }
-.mock-line.w-60   { width: 60%; }
-.mock-line.w-40   { width: 40%; }
-.mock-line.accent { background: var(--warm); width: 30%; }
-.mock-screen-hero-img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: .65;
-}
-/* Phone screen content */
-.mock-phone-fill {
-  width: 100%; height: 100%;
-  background: var(--cream);
-  display: flex; flex-direction: column; gap: 2px; padding: 4px 3px;
-}
-.mock-phone-nav {
-  height: 6px; background: var(--ink); margin-bottom: 2px; border-radius: 1px;
-}
-
-/* Card text body */
-.case-body-wrap {
-  padding: 2.8rem 3rem;
-  display: flex; flex-direction: column; flex: 1;
-}
-.case-num {
-  font-family: var(--f-u); font-size: 9px; font-weight: 300;
-  letter-spacing: .32em; text-transform: uppercase;
-  color: var(--ink-ghost); display: block; margin-bottom: 1.6rem;
-}
-.case-cat {
-  font-family: var(--f-u); font-size: 9.5px; font-weight: 300;
-  letter-spacing: .28em; text-transform: uppercase;
-  color: var(--warm); display: block; margin-bottom: .9rem;
-}
-.case-type {
-  font-family: var(--f-d);
-  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
-  font-weight: 300; line-height: 1.18; letter-spacing: -.01em;
-  color: var(--ink); margin-bottom: .3rem;
-}
-.case-type em { font-style: italic; }
-.case-jp-type {
-  font-family: var(--f-js);
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  font-weight: 200; line-height: 1.45; letter-spacing: .055em;
-  color: var(--ink); margin-bottom: 1.8rem;
-}
-.case-rule { height: 1px; background: var(--stone-lt); margin-bottom: 1.8rem; }
-.case-label {
-  font-family: var(--f-u); font-size: 9px; font-weight: 300;
-  letter-spacing: .28em; text-transform: uppercase;
-  color: var(--ink-light); display: block; margin-bottom: .6rem;
-}
-.case-body {
-  font-family: var(--f-u); font-size: 13px; font-weight: 300;
-  line-height: 1.8; letter-spacing: .02em;
-  color: var(--ink-mid); margin-bottom: 1.6rem;
-}
-.case-jp-body {
-  font-family: var(--f-ju); font-size: 13px; font-weight: 200;
-  line-height: 2; letter-spacing: .06em;
-  color: var(--ink-mid); margin-bottom: 1.6rem;
-}
-/* Tags for solutions */
-.case-tags {
-  display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.8rem;
-}
-.case-tag {
-  font-family: var(--f-u); font-size: 9px; font-weight: 300;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--ink-mid);
-  border: 1px solid var(--stone);
-  padding: .35rem .8rem;
-  transition: border-color var(--t1), color var(--t1);
-}
-.case-card:hover .case-tag {
-  border-color: var(--stone-lt);
-}
-
-/* Outcome bar */
-.case-outcome {
-  margin-top: auto;
-  padding: 1.6rem 1.8rem;
-  background: var(--cream-deep);
-  border-left: 2px solid var(--warm);
-}
-.case-out-num {
-  font-family: var(--f-d);
-  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-  font-weight: 300; letter-spacing: -.03em; line-height: 1;
-  color: var(--warm); margin-bottom: .35rem;
-}
-.case-out-desc {
-  font-family: var(--f-u); font-size: 12px; font-weight: 300;
-  letter-spacing: .04em; color: var(--ink-mid); line-height: 1.65;
-}
-.case-out-jp {
-  font-family: var(--f-ju); font-size: 12px; font-weight: 200;
-  letter-spacing: .09em; color: var(--ink-mid); line-height: 1.85;
-}
-
-/* Disclaimer */
-.cases-note {
-  max-width: 1200px; margin: 0 auto;
-  padding: 2.2rem 3rem;
-  border: 1px solid var(--stone-lt);
-  background: var(--cream);
-  display: flex; align-items: center; gap: 1.4rem;
-}
-.cases-note-mark { color: var(--warm); font-size: .85rem; flex-shrink: 0; }
-.cases-note-txt {
-  font-family: var(--f-u); font-size: 11.5px; font-weight: 300;
-  line-height: 1.8; letter-spacing: .025em; color: var(--ink-mid);
-}
-.cases-note-jp {
-  font-family: var(--f-ju); font-size: 11.5px; font-weight: 200;
-  line-height: 2; letter-spacing: .06em; color: var(--ink-mid);
-}
-
-@media (max-width: 960px) {
-  .cases-grid { grid-template-columns: 1fr; }
-  .case-mockup { height: 180px; }
-  .mock-laptop { width: 180px; }
-  .mock-phone.left  { left: calc(50% - 105px); }
-  .mock-phone.right { left: calc(50% + 48px); }
-}
-@media (max-width: 600px) {
-  .case-body-wrap { padding: 2rem 1.8rem; }
-}
-
 
 /* ═══════════════════════════════════════
    SYMPATHY CHECK SECTION
@@ -2493,7 +1784,7 @@ footer {
     <div class="why-top">
       <div>
         <span class="sup rv" style="text-align:left;display:block;margin-bottom:1.4rem">
-          <span class="en">Why KAIRO</span><span class="ja">KAIROとは</span><span class="zh">為何選擇 KAIRO</span><span class="ko">KAIRO 소개</span><span class="zh">為何選擇 KAIRO</span><span class="ko">KAIRO 소개</span>
+          <span class="en">Why KAIRO</span><span class="ja">KAIROとは</span><span class="zh">為何選擇 KAIRO</span><span class="ko">KAIRO 소개</span>
         </span>
         <h2 id="why-h" class="why-hl en rv">Thirty years on the ground.<br><em>The story behind KAIRO.</em></h2>
         <p class="why-jp-hl ja rv">1997年から、この街で。<br><em>KAIROが生まれた理由。</em></p>
@@ -2906,12 +2197,8 @@ footer {
       <span class="sup ko">무료 상담</span>
       <h2 id="enq-h" class="enq-h2 en">In 30 minutes, we'll identify<br>the three things keeping<br><em>international guests away.</em></h2>
       <p class="enq-jp-h2 ja">30分で、「いま外国人客があなたの店を<br>通り過ぎている3つの理由」を<br><em>お伝えします</em>。</p>
-      <h2 class="enq-h2 zh">30分鐘內，找出讓<br>外國客人<em>離開的3個原因</em>。</h2>
-      <h2 class="enq-h2 ko">30분 안에, 외국 손님이<br>지나쳐 가는 <em>3가지 이유</em>를 알려드립니다.</h2>
       <h2 class="enq-h2 zh">30分鐘內，我們找出<br>阻止外籍賓客預訂的<br><em>三個關鍵原因。</em></h2>
       <h2 class="enq-h2 ko">30분 안에, 해외 손님이<br>방문을 포기하는<br><em>세 가지 이유를 밝혀드립니다.</em></h2>
-      <p class="enq-p zh">無需承擔任何義務，無銷售推銷。由每天走過您店門前的人，提供真實客觀的現況評估——他深知外籍旅客看到什麼、看不到什麼。</p>
-      <p class="enq-p ko">부담 없이, 세일즈 없이. 매일 매장 앞을 지나는 사람이 솔직하게 현황을 진단합니다. 해외 손님의 눈에 무엇이 보이고 무엇이 보이지 않는지 정확히 알고 있습니다.</p>
       <p class="enq-p en">No obligation. No sales pitch. Just an honest assessment from someone who walks past your front door every day — and knows exactly what international guests see, and don't see, when they pass.</p>
       <p class="enq-jp-p ja">売り込みは一切しません。毎日この街を歩いている人間による、率直な現状診断です。課題の特定から解決策の概要まで、30分でお伝えします。対面・オンライン、どちらでも対応します。</p>
       <p class="enq-p zh">沒有義務，沒有業務推銷。只是一位每天走在您門前的人，給您最誠實的現狀評估。30分鐘，線上或面談均可。</p>
@@ -2954,8 +2241,6 @@ footer {
         <span class="ja">無料相談を申し込む</span>
         <span class="zh">申請免費諮詢</span>
         <span class="ko">무료 상담 신청</span>
-        <span class="zh">申請免費諮詢</span>
-        <span class="ko">무료 상담 신청</span>
       </button>
     </form>
     <div class="form-ok" id="form-ok" role="alert">
@@ -2981,8 +2266,6 @@ footer {
         <p class="ft-tag en">Ginza · Tsukiji, Tokyo</p>
         <p class="ft-tag ja">銀座・築地、東京</p>
         <p class="ft-tag zh">銀座・築地，東京</p>
-        <p class="ft-tag ko">긴자·쓰키지, 도쿄</p>
-        <p class="ft-tag zh">銀座・築地，東京</p>
         <p class="ft-tag ko">긴자 · 쓰키지, 도쿄</p>
       </div>
       <div class="ft-cols">
@@ -2998,7 +2281,7 @@ footer {
           </ul>
         </nav>
         <nav aria-label="お問い合わせ">
-          <span class="ft-ct"><span class="en">문의</span><span class="ja">お問い合わせ</span></span>
+          <span class="ft-ct"><span class="en">Contact</span><span class="ja">お問い合わせ</span><span class="zh">聯絡方式</span><span class="ko">문의</span></span>
           <ul class="ft-ls">
             <li><a href="#enquire"><span class="en">Free Consultation</span><span class="ja jp-a">無料相談</span><span class="zh jp-a">免費諮詢</span><span class="ko jp-a">무료 상담</span></a></li>
             <li><a href="mailto:savannatokyo@gmail.com">Email</a></li>
@@ -3137,7 +2420,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const t = document.querySelector(a.getAttribute('href'));
     if (!t) return;
     e.preventDefault();
-    window.scrollTo({top: t.getBoundingClientRect().top + scrollY - 62, behavior: 'smooth'});
+    const navH = document.getElementById('nav').offsetHeight || 62;
+    window.scrollTo({top: t.getBoundingClientRect().top + scrollY - navH, behavior: 'smooth'});
   });
 });
 
