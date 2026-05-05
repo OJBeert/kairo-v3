@@ -51,6 +51,7 @@
 <link rel="preconnect" href="https://player.vimeo.com">
 <link rel="preconnect" href="https://f.vimeocdn.com" crossorigin>
 <link rel="preconnect" href="https://fresnel.vimeocdn.com" crossorigin>
+<script src="https://player.vimeo.com/api/player.js" defer></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400&family=Noto+Sans+TC:wght@200;300;400&family=Noto+Sans+KR:wght@200;300;400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;300;400;500&family=Noto+Serif+JP:wght@200;300&family=Noto+Sans+JP:wght@200;300&display=swap" rel="stylesheet">
 
@@ -584,6 +585,7 @@ img { display: block; max-width: 100%; }
   position: absolute; inset: 0; z-index: 1;
   background: #14110e;
   opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
 }
 
 .hero-veil {
@@ -2144,9 +2146,11 @@ footer {
   <div class="hero-vid" aria-hidden="true">
     <iframe
       id="hero-iframe"
-      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=0&muted=1&playsinline=1&autopause=0"
+      src="https://player.vimeo.com/video/305311222?background=1&autoplay=1&loop=0&muted=1&playsinline=1&autopause=0&transparent=0"
       style="position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;transform:translate(-50%,-50%);border:none;"
-      allow="autoplay; fullscreen"
+      allow="autoplay; fullscreen; picture-in-picture"
+      playsinline
+      webkit-playsinline
       tabindex="-1"
       aria-hidden="true"
     ></iframe>
@@ -3218,36 +3222,56 @@ document.querySelectorAll('.fsub').forEach(btn => {
 })();
 </script>
 
-<script src="https://player.vimeo.com/api/player.js"></script>
 <script>
 (function() {
   var ids = [305311222, 305313129, 377450847, 396397429, 486222916, 657690215];
   var current = 0;
   var cover = document.querySelector('.hero-cover');
-  var player = new Vimeo.Player(document.getElementById('hero-iframe'));
   var transitioning = false;
   var triggered = false;
 
-  player.on('play', function() {
-    if (!transitioning) {
+  function initPlayer() {
+    var iframe = document.getElementById('hero-iframe');
+    if (!iframe || typeof Vimeo === 'undefined') {
+      setTimeout(initPlayer, 100);
+      return;
+    }
+
+    var player = new Vimeo.Player(iframe);
+
+    /* モバイル含め確実に再生 */
+    player.ready().then(function() {
+      player.setVolume(0);
+      player.play().catch(function() {});
+    });
+
+    player.on('play', function() {
       cover.style.opacity = '0';
-    } else {
       transitioning = false;
       triggered = false;
-      cover.style.opacity = '0';
-    }
-  });
+    });
 
-  player.on('timeupdate', function(data) {
-    if (triggered || transitioning) return;
-    if (data.duration > 0 && (data.duration - data.seconds) <= 2) {
-      triggered = true;
-      transitioning = true;
-      cover.style.opacity = '1';
-      current = (current + 1) % ids.length;
-      player.loadVideo(ids[current]);
-    }
-  });
+    player.on('timeupdate', function(data) {
+      if (triggered || transitioning || !data.duration) return;
+      /* 動画終了1秒前にカバーを出し次の動画をロード */
+      if ((data.duration - data.seconds) <= 1) {
+        triggered = true;
+        transitioning = true;
+        cover.style.opacity = '1';
+        current = (current + 1) % ids.length;
+        player.loadVideo(ids[current]).then(function() {
+          player.setVolume(0);
+          player.play().catch(function() {});
+        });
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPlayer);
+  } else {
+    initPlayer();
+  }
 })();
 </script>
 
