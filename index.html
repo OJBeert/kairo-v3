@@ -585,13 +585,6 @@ img { display: block; max-width: 100%; }
   background: #14110e;
   opacity: 0; pointer-events: none;
 }
-.hero-mobile-bg {
-  display: none;
-}
-@keyframes heroKB {
-  from { transform: scale(1.06) translate(0%, 0%); }
-  to   { transform: scale(1.12) translate(-2%, -1%); }
-}
 
 .hero-veil {
   position: absolute; inset: 0;
@@ -611,16 +604,9 @@ img { display: block; max-width: 100%; }
     margin-right: 0;
     aspect-ratio: 4 / 3;
     min-height: 280px;
+    background-position: center center;
   }
-  #hero-iframe { display: none; }
-  .hero-mobile-bg {
-    display: block;
-    position: absolute;
-    inset: -6%;
-    background: url(assets/img/ogp-image.jpg) center / cover no-repeat;
-    animation: heroKB 18s ease-in-out infinite alternate;
-    will-change: transform;
-  }
+
 }
 /* Caption below hero (Aman-style) */
 .hero-cap {
@@ -2156,7 +2142,6 @@ footer {
 <!-- ════ HERO ════ -->
 <section id="hero" aria-label="ヒーローセクション">
   <div class="hero-vid" aria-hidden="true">
-    <div class="hero-mobile-bg" aria-hidden="true"></div>
     <iframe
       id="hero-iframe"
       src="https://player.vimeo.com/video/305311222?autoplay=1&muted=1&controls=0&title=0&byline=0&portrait=0&loop=0&autopause=0&transparent=0&playsinline=1&dnt=1"
@@ -3245,7 +3230,6 @@ document.querySelectorAll('.fsub').forEach(btn => {
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
 (function() {
-  if (window.matchMedia('(max-width: 768px)').matches) return;
   var ids = [305311222, 305313129, 377450847, 396397429, 486222916, 657690215];
   var current = 0;
   var cover = document.querySelector('.hero-cover');
